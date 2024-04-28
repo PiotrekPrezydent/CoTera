@@ -23,6 +23,20 @@
             ShowClassesForCurrentDay();
 
         }
+        internal static void ShowClassesForCurrentDay()
+        {
+            DayName.Text = ChosenDay.ToString();
+            int index = 0;
+            if (ChosenDay == DayOfWeek.Sunday)
+                index = 7;
+            else
+                index = (int)ChosenDay;
+
+            index--;
+
+            CollageDay day = CollageDays[index];
+            Classes.ItemsSource = day.Classes.Select(e => e.Name + "\n" + e.TimeSpan);
+        }
 
         void OnPreviousClicked(object sender, EventArgs e)
         {
@@ -42,21 +56,6 @@
                 ChosenDay += 1;
 
             ShowClassesForCurrentDay();
-        }
-
-        internal static void ShowClassesForCurrentDay()
-        {
-            DayName.Text = ChosenDay.ToString();
-            int index = 0;
-            if (ChosenDay == DayOfWeek.Sunday)
-                index = 7;
-            else
-                index = (int)ChosenDay;
-
-            index--;
-
-            CollageDay day = CollageDays[index];
-            Classes.ItemsSource = day.Classes.Select(e => e.Name + "\n" + e.TimeSpan);
         }
 
         void InitializeDefaultDays()

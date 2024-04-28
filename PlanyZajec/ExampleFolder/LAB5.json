@@ -1,0 +1,76 @@
+{
+    "PON": [
+        { 
+            "nazwa": "Object 1", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "Object 2", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "Object 3", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ],
+
+      "WT": [
+        { 
+            "nazwa": "Object 1", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "Object 2", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "Object 3", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ],
+
+      "SR": [
+        { 
+            "nazwa": "Object 1", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "Object 2", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "Object 3", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ],
+
+      "CZW": [
+        { 
+            "nazwa": "Object 1", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "Object 2", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "Object 3", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ],
+      
+      "PT": [
+        { 
+            "nazwa": "Object 1", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "Object 2", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "Object 3", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ]  
+}
