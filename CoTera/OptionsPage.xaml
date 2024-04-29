@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoTera.OptionsPage"
+             Title="Options"
+             xmlns:viewmodel="clr-namespace:CoTera.ViewModels">
+    
+    <Grid RowDefinitions=".10*,.20*,.20*,.20*,.20*,.10*"
+          ColumnDefinitions=".20*,.60*,.20*"
+          Padding="10"
+          RowSpacing="50"
+          ColumnSpacing="10">
+
+        <Picker Grid.Row="1"
+                Grid.Column="1"
+                Title="Wybierz Rok"
+                x:Name="SelectedYear">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Test1</x:String>
+                    <x:String>Test2</x:String>
+                    <x:String>Test3</x:String>
+                    <x:String>Test4</x:String>
+                    <x:String>Test5</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Picker Grid.Row="2"
+                Grid.Column="1"
+                Title="Wybierz Lab"
+                x:Name="SelectedLab">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Test6</x:String>
+                    <x:String>Test7</x:String>
+                    <x:String>Test8</x:String>
+                    <x:String>Test9</x:String>
+                    <x:String>Test10</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button 
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="Zapisz i wróć"/>
+
+        <Button 
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="Informacje prawne"/>
+
+    </Grid>
+</ContentPage>

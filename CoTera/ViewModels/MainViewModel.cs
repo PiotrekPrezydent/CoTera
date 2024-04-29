@@ -44,7 +44,7 @@ namespace CoTera.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public DayView[] LoadedDays = new DayView[7];
+        internal DayView[] LoadedDays = new DayView[7];
 
         public MainViewModel()
         {

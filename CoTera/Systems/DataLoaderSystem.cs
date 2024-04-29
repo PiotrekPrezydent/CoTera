@@ -32,13 +32,13 @@ namespace CoTera.Systems
 
             for (int i = 0; i < 5; i++)
             {
-                var rawClassesInDay = jsonResponse.Values().ToArray()[i];
+                var rawClassesViews = jsonResponse.Values().ToArray()[i];
 
-                List<ClassView> classesInDay = new List<ClassView>();
-                foreach (var rawClass in rawClassesInDay)
-                    classesInDay.Add(new ClassView(rawClass["nazwa"].ToString(), rawClass["godziny"].ToString()));
+                List<ClassView> classes = new List<ClassView>();
+                foreach (var rawClass in rawClassesViews)
+                    classes.Add(new ClassView(rawClass["nazwa"].ToString(), rawClass["godziny"].ToString()));
 
-                MainPage.Instance.LoadedDays[i] = new DayView((DayOfWeek)i + 1, classesInDay.ToArray());
+                MainPage.Instance.LoadedDays[i] = new DayView((DayOfWeek)i + 1, classes.ToArray());
             }
             MainPage.Instance.ShowClassesForCurrentDay();
         }

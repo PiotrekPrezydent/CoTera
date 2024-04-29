@@ -18,17 +18,16 @@ namespace CoTera
             BindingContext = Instance;
             //load 
             DataLoaderSystem.LoadDaysFromDB();
+            
         }
 
+        void OnPreviousClicked(object sender, EventArgs e) => Instance.ChosenDay -= 1;
 
-        void OnPreviousClicked(object sender, EventArgs e)
-        {
-            Instance.ChosenDay -= 1;
-        }
+        void OnNextClicked(object sender, EventArgs e) => Instance.ChosenDay += 1;
 
-        void OnNextClicked(object sender, EventArgs e)
+        void OnOptionsClicked(object sender, EventArgs e)
         {
-            Instance.ChosenDay += 1;
+            NavigationSystem.GoToOptionsAsync();
         }
     }
 }
