@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoTera.MainPage">
+             x:Class="CoTera.MainPage"
+             xmlns:viewmodel="clr-namespace:CoTera.ViewModels"
+             >
 
     <Grid RowDefinitions="50,.80*,50"
           ColumnDefinitions=".20*,.60*,.20*"
@@ -16,10 +18,10 @@
             Clicked="OnPreviousClicked"/>
 
         <Label
-            x:Name="Lab_DOTW"
             Grid.Row="0"
             Grid.Column="1"
-            Text="MONDAY"/>
+            Text="{Binding NameOfDay}"/>
+        
 
         <Button 
             Grid.Row="0"
@@ -27,14 +29,14 @@
             Text="\\\\"
             Clicked="OnNextClicked"/>
 
-        <CollectionView Grid.Row="1" Grid.ColumnSpan="3" x:Name="ClassesList">
-            <CollectionView.ItemsSource>
+        <CollectionView Grid.Row="1" Grid.ColumnSpan="3" x:Name="MainCollection">
+            <CollectionView.ItemsSource >
                 <x:Array Type="{x:Type x:String}">
-                    <x:String>Test</x:String>
-                    <x:String>Test</x:String>
-                    <x:String>Test</x:String>
-                    <x:String>Test</x:String>
-                    <x:String>Test</x:String>
+                    <x:String>Test1</x:String>
+                    <x:String>Test2</x:String>
+                    <x:String>Test3</x:String>
+                    <x:String>Test4</x:String>
+                    <x:String>Test5</x:String>
                 </x:Array>
             </CollectionView.ItemsSource>
             
