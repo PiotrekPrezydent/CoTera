@@ -1,6 +1,5 @@
 ﻿using CoTera.Systems;
 using CoTera.ViewModels;
-using CoTera.Views;
 
 namespace CoTera
 {
@@ -8,16 +7,17 @@ namespace CoTera
     {
         internal static MainViewModel Instance;
         internal static CollectionView Classes;
+        public static string DEBUG;
 
         public MainPage()
         {
             InitializeComponent();
-
+            DEBUG = "";
             Classes = MainCollection;
             Instance = new MainViewModel();
             BindingContext = Instance;
             //load 
-            DataLoaderSystem.LoadDaysFromDB();
+            DataLoaderSystem.LoadDataFromDB();
             
         }
 
@@ -25,9 +25,11 @@ namespace CoTera
 
         void OnNextClicked(object sender, EventArgs e) => Instance.ChosenDay += 1;
 
-        void OnOptionsClicked(object sender, EventArgs e)
+        void OnOptionsClicked(object sender, EventArgs e) => NavigationSystem.GoToOptionsAsync();
+
+        async void OnRefreshClicked(object sender, EventArgs e)
         {
-            NavigationSystem.GoToOptionsAsync();
+            await DisplayAlert("DEBUG",DEBUG,"OK");
         }
     }
 }

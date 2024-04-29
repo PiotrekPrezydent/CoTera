@@ -5,12 +5,14 @@ namespace CoTera.Systems
 {
     internal static class DataLoaderSystem
     {
-        internal static async void LoadDaysFromDB()
+        internal static string SelectedYear;
+        internal static string SelectedLab;
+        internal static async void LoadDataFromDB()
         {
-            await FetchDaysFromJson();
+            await FetchDataFromJson();
         }
 
-        static async Task FetchDaysFromJson()
+        static async Task FetchDataFromJson()
         {
             string url = "https://raw.githubusercontent.com/typicode/lowdb/main/package.json";
 

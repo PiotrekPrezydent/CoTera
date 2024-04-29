@@ -54,7 +54,8 @@
         <Button 
             Grid.Row="2"
             Grid.Column="0"
-            Text="Refresh"/>
+            Text="Refresh"
+            Clicked="OnRefreshClicked"/>
         <Button 
             Grid.Row="2"
             Grid.Column="2"

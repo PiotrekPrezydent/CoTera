@@ -14,7 +14,9 @@
         <Picker Grid.Row="1"
                 Grid.Column="1"
                 Title="Wybierz Rok"
-                x:Name="SelectedYear">
+                x:Name="SelectYear"
+                SelectedIndexChanged="OnSelectedYear"
+                >
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Test1</x:String>
@@ -29,7 +31,9 @@
         <Picker Grid.Row="2"
                 Grid.Column="1"
                 Title="Wybierz Lab"
-                x:Name="SelectedLab">
+                x:Name="SelectLab"
+                SelectedIndexChanged="OnSelectedLab"
+                >
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Test6</x:String>
@@ -44,12 +48,14 @@
         <Button 
             Grid.Row="3"
             Grid.Column="1"
-            Text="Zapisz i wróć"/>
+            Text="Zapisz i wróć"
+            Clicked="OnSaveAndReturn"/>
 
         <Button 
             Grid.Row="4"
             Grid.Column="1"
-            Text="Informacje prawne"/>
+            Text="Informacje prawne"
+            Clicked="OnLegalInformationClick"/>
 
     </Grid>
 </ContentPage>
