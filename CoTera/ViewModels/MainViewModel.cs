@@ -15,32 +15,20 @@ namespace CoTera.ViewModels
             } 
         }
         string _nameOfDay;
-        
-        internal DayOfWeek ChosenDay
+
+        //Td: get week type from this site this must be hardcodded
+        //https://www.ur.edu.pl/files/user_directory/899/organizacja%20roku%20akademickiego/Zarz%C4%85dzenie%20nr%2077_2023%20ws.%20organizacji%20roku%20akademickiego%202023-2024.pdf
+        internal DateTime ChosenDate
         {
-            get => _chosenDay;
+            get => _chosenDate;
             set
             {
-                if (value == _chosenDay)
-                    throw new Exception("Overrided day with same value");
-
-                if(value > _chosenDay)
-                {
-                    if (_chosenDay == DayOfWeek.Saturday)
-                        value = DayOfWeek.Sunday;
-                }
-                else
-                {
-                    if (_chosenDay == DayOfWeek.Sunday)
-                        value = DayOfWeek.Saturday;
-                }
-
-                _chosenDay = value;
-                NameOfDay = _chosenDay.ToString();
+                _chosenDate = value;
+                NameOfDay = _chosenDate.DayOfWeek.ToString() + "\n" + GetWeekSpanAsString(_chosenDate);
                 ShowClassesForCurrentDay();
             }
         }
-        DayOfWeek _chosenDay;
+        DateTime _chosenDate;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -53,21 +41,30 @@ namespace CoTera.ViewModels
                 ClassView[] classes = { new ClassView("UNKNOWN", "UNKNOWN") };
                 LoadedDays[i] = new DayView((DayOfWeek)i, classes);
             }
-            ChosenDay = DateTime.Today.DayOfWeek;
+            ChosenDate = DateTime.Today;
         }
 
         internal void ShowClassesForCurrentDay()
         {
             int index = 0;
-            if (ChosenDay == DayOfWeek.Sunday)
+            if (ChosenDate.DayOfWeek == DayOfWeek.Sunday)
                 index = 7;
             else
-                index = (int)ChosenDay;
+                index = (int)ChosenDate.DayOfWeek;
 
             index--;
 
             DayView day = LoadedDays[index];
             MainPage.Classes.ItemsSource = day.Classes.Select(e => e.Name + "\n" + e.TimeSpan);
+        }
+
+        string GetWeekSpanAsString(DateTime date)
+        {
+            while (date.DayOfWeek != DayOfWeek.Monday)
+                date = date.AddDays(-1);
+
+            string returnedValue = date.ToString().Substring(0, 10) + " - " + date.AddDays(6).ToString().Substring(0, 10);
+            return returnedValue;
         }
 
         void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

@@ -16,14 +16,16 @@ namespace CoTera
             Classes = MainCollection;
             Instance = new MainViewModel();
             BindingContext = Instance;
+            DateTime d = DateTime.Today;
+            DEBUG = d.ToString().Substring(0,10) + "\n" + d.AddDays(1).ToString() + "\n" + d.AddDays(-1);
             //load 
             DataLoaderSystem.LoadDataFromDB();
-            
+
         }
 
-        void OnPreviousClicked(object sender, EventArgs e) => Instance.ChosenDay -= 1;
+        void OnPreviousClicked(object sender, EventArgs e) => Instance.ChosenDate = Instance.ChosenDate.AddDays(-1);
 
-        void OnNextClicked(object sender, EventArgs e) => Instance.ChosenDay += 1;
+        void OnNextClicked(object sender, EventArgs e) => Instance.ChosenDate = Instance.ChosenDate.AddDays(1);
 
         void OnOptionsClicked(object sender, EventArgs e) => NavigationSystem.GoToOptionsAsync();
 

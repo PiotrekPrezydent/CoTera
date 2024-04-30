@@ -26,7 +26,6 @@ namespace CoTera.ViewModels
             DataLoaderSystem.SelectedLab = SelectedLab;
 
             MainPage.Instance.ShowClassesForCurrentDay();
-            MainPage.DEBUG = DataLoaderSystem.SelectedYear + " // " + DataLoaderSystem.SelectedLab;
         }
     }
 }
