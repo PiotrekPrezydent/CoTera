@@ -15,7 +15,7 @@
                 Grid.Column="1"
                 Title="Wybierz Rok"
                 x:Name="SelectYear"
-                SelectedIndexChanged="OnSelectedYear"
+                SelectedIndexChanged="OnSelectedYearChanged"
                 >
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -32,7 +32,6 @@
                 Grid.Column="1"
                 Title="Wybierz Lab"
                 x:Name="SelectLab"
-                SelectedIndexChanged="OnSelectedLab"
                 >
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">

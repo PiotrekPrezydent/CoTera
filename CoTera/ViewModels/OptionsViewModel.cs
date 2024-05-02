@@ -1,29 +1,23 @@
 ﻿using CoTera.Systems;
+using System.ComponentModel;
 
 namespace CoTera.ViewModels
 {
     internal class OptionsViewModel
     {
-        public string SelectedYear;
-
-        public string SelectedLab;
-
         public OptionsViewModel()
         {
-            //Sample values for first boot
-            SelectedYear = "Test1";
-            SelectedLab = "Test6";
-
-            if(DataLoaderSystem.SelectedYear == null)
-                DataLoaderSystem.SelectedYear = SelectedYear;
-            if(DataLoaderSystem.SelectedLab == null)
-                DataLoaderSystem.SelectedLab = SelectedLab;
+            DataLoaderSystem.GetAllYears();
         }
+
 
         internal void SaveDataToLoader()
         {
-            DataLoaderSystem.SelectedYear = SelectedYear;
-            DataLoaderSystem.SelectedLab = SelectedLab;
+            DataLoaderSystem.SelectedYearIndex = OptionsPage.YearPicker.SelectedIndex;
+
+
+            MainPage.DEBUG = DataLoaderSystem.SelectedYearIndex.ToString();
+            //DataLoaderSystem.SelectedLabReference = OptionsPage.YearPicker.ItemsSource.IndexOf(SelectedYear);
 
             MainPage.Instance.ShowClassesForCurrentDay();
         }

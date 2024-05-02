@@ -6,12 +6,17 @@ namespace CoTera
     public partial class OptionsPage : ContentPage
     {
         internal static OptionsViewModel Instance;
+
+        internal static Picker YearPicker;
+
+        internal static Picker LabPicker;
         public OptionsPage()
         {
             InitializeComponent();
+            YearPicker = SelectYear;
+            LabPicker = SelectLab;
+
             Instance = new OptionsViewModel();
-            SelectYear.SelectedItem = DataLoaderSystem.SelectedYear;
-            SelectLab.SelectedItem = DataLoaderSystem.SelectedLab;
         }
 
         async void OnLegalInformationClick(object sender, EventArgs e) =>
@@ -21,15 +26,16 @@ namespace CoTera
                 "OK"
             );
 
-        void OnSelectedYear(object sender, EventArgs e) => Instance.SelectedYear = (string)SelectYear.SelectedItem;
-
-        void OnSelectedLab(object sender, EventArgs e) => Instance.SelectedLab = (string)SelectLab.SelectedItem;
-
         void OnSaveAndReturn(object sender, EventArgs e)
         {
             //td add load data for chosen year and lab
             Instance.SaveDataToLoader();
             NavigationSystem.GoBackToMainAsync();
+        }
+
+        async void OnSelectedYearChanged(object sender, EventArgs e)
+        {
+            //fetch labs for selected year
         }
     }
 }

@@ -1,75 +1,75 @@
 {
     "PON": [
         { 
-            "nazwa": "Object 1", 
+            "nazwa": "InfLab2P", 
             "godziny": "9:00 AM - 5:00 PM" 
         },
         { 
-            "nazwa": "Object 2", 
+            "nazwa": "InfLab2P", 
             "godziny": "10:00 AM - 6:00 PM" 
         },
         { 
-            "nazwa": "Object 3", 
+            "nazwa": "InfLab2P", 
             "godziny": "11:00 AM - 7:00 PM" 
         }
       ],
 
       "WT": [
         { 
-            "nazwa": "Object 1", 
+            "nazwa": "InfLab2WT", 
             "godziny": "9:00 AM - 5:00 PM" 
         },
         { 
-            "nazwa": "Object 2", 
+            "nazwa": "InfLab2WT", 
             "godziny": "10:00 AM - 6:00 PM" 
         },
         { 
-            "nazwa": "Object 3", 
+            "nazwa": "InfLab2WT", 
             "godziny": "11:00 AM - 7:00 PM" 
         }
       ],
 
       "SR": [
         { 
-            "nazwa": "Object 1", 
+            "nazwa": "InfLab2SR", 
             "godziny": "9:00 AM - 5:00 PM" 
         },
         { 
-            "nazwa": "Object 2", 
+            "nazwa": "InfLab2SR", 
             "godziny": "10:00 AM - 6:00 PM" 
         },
         { 
-            "nazwa": "Object 3", 
+            "nazwa": "InfLab2SR", 
             "godziny": "11:00 AM - 7:00 PM" 
         }
       ],
 
       "CZW": [
         { 
-            "nazwa": "Object 1", 
+            "nazwa": "InfLab2CZW", 
             "godziny": "9:00 AM - 5:00 PM" 
         },
         { 
-            "nazwa": "Object 2", 
+            "nazwa": "InfLab2CZW", 
             "godziny": "10:00 AM - 6:00 PM" 
         },
         { 
-            "nazwa": "Object 3", 
+            "nazwa": "InfLab2CZW", 
             "godziny": "11:00 AM - 7:00 PM" 
         }
       ],
       
       "PT": [
         { 
-            "nazwa": "Object 1", 
+            "nazwa": "InfLab2PT", 
             "godziny": "9:00 AM - 5:00 PM" 
         },
         { 
-            "nazwa": "Object 2", 
+            "nazwa": "InfLab2PT", 
             "godziny": "10:00 AM - 6:00 PM" 
         },
         { 
-            "nazwa": "Object 3", 
+            "nazwa": "InfLab2PT", 
             "godziny": "11:00 AM - 7:00 PM" 
         }
       ]  

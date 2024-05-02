@@ -1,0 +1,76 @@
+{
+    "PON": [
+        { 
+            "nazwa": "InfLab1P", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1P", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1P", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ],
+
+      "WT": [
+        { 
+            "nazwa": "InfLab1WT", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1WT", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1WT", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ],
+
+      "SR": [
+        { 
+            "nazwa": "InfLab1SR", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1SR", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1SR", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ],
+
+      "CZW": [
+        { 
+            "nazwa": "InfLab1CZW", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1CZW", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1CZW", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ],
+      
+      "PT": [
+        { 
+            "nazwa": "InfLab1PT", 
+            "godziny": "9:00 AM - 5:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1PT", 
+            "godziny": "10:00 AM - 6:00 PM" 
+        },
+        { 
+            "nazwa": "InfLab1PT", 
+            "godziny": "11:00 AM - 7:00 PM" 
+        }
+      ]  
+}

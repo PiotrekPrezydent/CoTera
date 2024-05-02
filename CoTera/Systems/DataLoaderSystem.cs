@@ -1,15 +1,56 @@
 ﻿using CoTera.Views;
 using Newtonsoft.Json.Linq;
+using Octokit;
 
 namespace CoTera.Systems
 {
     internal static class DataLoaderSystem
     {
-        internal static string SelectedYear;
-        internal static string SelectedLab;
+        //$("meta[name=octolytics-dimension-repository_id]").getAttribute('content')
+        internal const long REPOID = 793261339;
+
+        internal static List<string>? LoadedAllYears;
+
+        internal static List<string>? LoadedLabs;
+
+        internal static int SelectedYearIndex = 0;
+
+        internal static int SelectedLabIndex;
+
         internal static async void LoadDataFromDB()
         {
             await FetchDataFromJson();
+        }
+
+        internal static async void GetAllYears()
+        {
+            await FetchAllYears();
+        }
+
+        internal static async void GetAllLabsForCurrentYear()
+        {
+
+        }
+
+        static async Task FetchAllYears()
+        {
+            LoadedAllYears = new List<string>();
+            var git = new GitHubClient(new ProductHeaderValue("GetAllPlanyZajec"));
+            var contents = await git.Repository.Content.GetAllContents(REPOID, "PlanyZajec");
+
+            foreach (var a in contents)
+                if (a.Type == ContentType.Dir)
+                    LoadedAllYears.Add(a.Name);
+
+            OptionsPage.YearPicker.ItemsSource = LoadedAllYears;
+
+            //load saved data
+            OptionsPage.YearPicker.SelectedIndex = SelectedYearIndex;
+        }
+
+        static async Task FetchLabsForCurrentYear()
+        {
+            LoadedLabs = new List<string>();
         }
 
         static async Task FetchDataFromJson()
@@ -44,5 +85,6 @@ namespace CoTera.Systems
             }
             MainPage.Instance.ShowClassesForCurrentDay();
         }
+
     }
 }
