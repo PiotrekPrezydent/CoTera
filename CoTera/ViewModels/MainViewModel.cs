@@ -16,7 +16,7 @@ namespace CoTera.ViewModels
         }
         string _nameOfDay;
 
-        //Td: get week type from this site this must be hardcodded
+        //Td: get week type from this site, this must be hardcodded
         //https://www.ur.edu.pl/files/user_directory/899/organizacja%20roku%20akademickiego/Zarz%C4%85dzenie%20nr%2077_2023%20ws.%20organizacji%20roku%20akademickiego%202023-2024.pdf
         internal DateTime ChosenDate
         {
@@ -30,17 +30,31 @@ namespace CoTera.ViewModels
         }
         DateTime _chosenDate;
 
+        public List<string> CurrentDayClasses
+        {
+            get => _currentDayClasses;
+            set
+            {
+                _currentDayClasses = value;
+                OnPropertyChanged(nameof(CurrentDayClasses));
+            }
+        }
+        List<string> _currentDayClasses;
+
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         internal DayView[] LoadedDays = new DayView[7];
 
         public MainViewModel()
         {
+            CurrentDayClasses = new List<string>();
             for (int i = 0; i < 7; i++)
             {
                 ClassView[] classes = { new ClassView("UNKNOWN", "UNKNOWN") };
                 LoadedDays[i] = new DayView((DayOfWeek)i, classes);
-            }
+                CurrentDayClasses.Add("UNKNOWN");
+            };
             ChosenDate = DateTime.Today;
         }
 
@@ -55,7 +69,8 @@ namespace CoTera.ViewModels
             index--;
 
             DayView day = LoadedDays[index];
-            MainPage.Classes.ItemsSource = day.Classes.Select(e => e.Name + "\n" + e.TimeSpan);
+
+            CurrentDayClasses = day.Classes.Select(e => e.Name + "\n" + e.TimeSpan).ToList();
         }
 
         string GetWeekSpanAsString(DateTime date)

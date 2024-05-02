@@ -9,13 +9,9 @@ namespace CoTera.Systems
         //$("meta[name=octolytics-dimension-repository_id]").getAttribute('content')
         internal const long REPOID = 793261339;
 
-        internal static List<string>? LoadedAllYears;
+        internal static int SavedSelectedYearIndex = -1;
 
-        internal static List<string>? LoadedLabs;
-
-        internal static int SelectedYearIndex = 0;
-
-        internal static int SelectedLabIndex;
+        internal static int SelectedLabIndex = -1;
 
         internal static async void LoadDataFromDB()
         {
@@ -34,23 +30,22 @@ namespace CoTera.Systems
 
         static async Task FetchAllYears()
         {
-            LoadedAllYears = new List<string>();
+            var loadedData = new List<string>();
             var git = new GitHubClient(new ProductHeaderValue("GetAllPlanyZajec"));
             var contents = await git.Repository.Content.GetAllContents(REPOID, "PlanyZajec");
 
             foreach (var a in contents)
                 if (a.Type == ContentType.Dir)
-                    LoadedAllYears.Add(a.Name);
+                    loadedData.Add(a.Name);
 
-            OptionsPage.YearPicker.ItemsSource = LoadedAllYears;
+            OptionsPage.Instance.LoadedYears = loadedData;
 
-            //load saved data
-            OptionsPage.YearPicker.SelectedIndex = SelectedYearIndex;
+            //check if user selected any year previously, if so load that data
+            OptionsPage.Instance.SelectedYearIndex = SavedSelectedYearIndex == -1 ? 0 : SavedSelectedYearIndex;
         }
 
         static async Task FetchLabsForCurrentYear()
         {
-            LoadedLabs = new List<string>();
         }
 
         static async Task FetchDataFromJson()
@@ -83,6 +78,8 @@ namespace CoTera.Systems
 
                 MainPage.Instance.LoadedDays[i] = new DayView((DayOfWeek)i + 1, classes.ToArray());
             }
+
+            //refresh showed classes after loading them
             MainPage.Instance.ShowClassesForCurrentDay();
         }
 

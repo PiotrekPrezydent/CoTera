@@ -5,18 +5,15 @@ namespace CoTera
 {
     public partial class OptionsPage : ContentPage
     {
-        internal static OptionsViewModel Instance;
+        internal static OptionsViewModel? Instance;
 
-        internal static Picker YearPicker;
-
-        internal static Picker LabPicker;
         public OptionsPage()
         {
             InitializeComponent();
-            YearPicker = SelectYear;
-            LabPicker = SelectLab;
 
             Instance = new OptionsViewModel();
+            BindingContext = Instance;
+            DataLoaderSystem.GetAllYears();
         }
 
         async void OnLegalInformationClick(object sender, EventArgs e) =>

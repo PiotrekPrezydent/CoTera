@@ -6,20 +6,17 @@ namespace CoTera
 {
     public partial class MainPage : ContentPage
     {
-        internal static MainViewModel Instance;
-        internal static CollectionView Classes;
+        internal static MainViewModel? Instance;
         public static string DEBUG;
 
         public MainPage()
         {
             InitializeComponent();
             DEBUG = "";
-            Classes = MainCollection;
             Instance = new MainViewModel();
             BindingContext = Instance;
             //load 
             DataLoaderSystem.LoadDataFromDB();
-
         }
 
         void OnPreviousClicked(object sender, EventArgs e) => Instance.ChosenDate = Instance.ChosenDate.AddDays(-1);

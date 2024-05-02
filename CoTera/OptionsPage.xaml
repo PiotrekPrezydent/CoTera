@@ -14,34 +14,17 @@
         <Picker Grid.Row="1"
                 Grid.Column="1"
                 Title="Wybierz Rok"
-                x:Name="SelectYear"
-                SelectedIndexChanged="OnSelectedYearChanged"
+                ItemsSource="{Binding LoadedYears}"
+                SelectedIndex="{Binding SelectedYearIndex}"
                 >
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Test1</x:String>
-                    <x:String>Test2</x:String>
-                    <x:String>Test3</x:String>
-                    <x:String>Test4</x:String>
-                    <x:String>Test5</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
         </Picker>
 
         <Picker Grid.Row="2"
                 Grid.Column="1"
                 Title="Wybierz Lab"
-                x:Name="SelectLab"
+                ItemsSource="{Binding LoadedLabs}"
+                SelectedIndex="{Binding SelectedLabIndex}"
                 >
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Test6</x:String>
-                    <x:String>Test7</x:String>
-                    <x:String>Test8</x:String>
-                    <x:String>Test9</x:String>
-                    <x:String>Test10</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
         </Picker>
 
         <Button 
