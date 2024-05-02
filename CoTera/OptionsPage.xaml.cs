@@ -29,10 +29,5 @@ namespace CoTera
             Instance.SaveDataToLoader();
             NavigationSystem.GoBackToMainAsync();
         }
-
-        async void OnSelectedYearChanged(object sender, EventArgs e)
-        {
-            //fetch labs for selected year
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CoTera.Systems;
+using Octokit;
 using System.ComponentModel;
 
 namespace CoTera.ViewModels
@@ -22,6 +23,7 @@ namespace CoTera.ViewModels
             set
             {
                 _selectedYearIndex = value;
+                DataLoaderSystem.GetAllLabsForCurrentYear();
                 OnPropertyChanged(nameof(SelectedYearIndex));
             }
         }
@@ -49,7 +51,6 @@ namespace CoTera.ViewModels
         }
         int _selectedLabIndex;
 
-
         public OptionsViewModel()
         {
             LoadedYears = new List<string>();
@@ -57,16 +58,18 @@ namespace CoTera.ViewModels
 
             LoadedYears.Add("-");
             LoadedLabs.Add("-");
+
+            DataLoaderSystem.InitializeGitConnection();
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
         internal void SaveDataToLoader()
         {
-            DataLoaderSystem.SavedSelectedYearIndex = SelectedYearIndex;
-            DataLoaderSystem.SelectedLabIndex = SelectedLabIndex;
+            DataLoaderSystem.SavedSelectedYear = LoadedYears[SelectedYearIndex];
+            DataLoaderSystem.SavedSelectedLab = LoadedLabs[SelectedLabIndex];
 
-            MainPage.DEBUG = DataLoaderSystem.SavedSelectedYearIndex + " /// " + DataLoaderSystem.SelectedLabIndex;
+            DataLoaderSystem.LoadSelectedLabContent();
         }
         void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }

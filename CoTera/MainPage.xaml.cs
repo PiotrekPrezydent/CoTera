@@ -15,8 +15,8 @@ namespace CoTera
             DEBUG = "";
             Instance = new MainViewModel();
             BindingContext = Instance;
-            //load 
-            DataLoaderSystem.LoadDataFromDB();
+
+            DataLoaderSystem.LoadSavedOrDefaultData();
         }
 
         void OnPreviousClicked(object sender, EventArgs e) => Instance.ChosenDate = Instance.ChosenDate.AddDays(-1);
@@ -28,22 +28,6 @@ namespace CoTera
         async void OnRefreshClicked(object sender, EventArgs e)
         {
             await DisplayAlert("DEBUG",DEBUG,"OK");
-        }
-
-        async void Tester()
-        {
-            //$("meta[name=octolytics-dimension-repository_id]").getAttribute('content')
-            const long id = 793261339;
-            var git = new GitHubClient(new ProductHeaderValue("GetAllPlanyZajec"));
-            var contents = await git.Repository.Content.GetAllContents(id,"PlanyZajec");
-            foreach(var a in contents)
-            {
-                if(a.Type == ContentType.Dir)
-                {
-                    DEBUG += a.Path + " /// " + a.Name + "\n";
-
-                }
-            }
         }
     }
 }
