@@ -1,19 +1,15 @@
 ﻿using CoTera.Systems;
 using CoTera.ViewModels;
-using Newtonsoft.Json.Linq;
-using Octokit;
 
 namespace CoTera
 {
     public partial class MainPage : ContentPage
     {
         internal static MainViewModel? Instance;
-        public static string DEBUG;
 
         public MainPage()
         {
             InitializeComponent();
-            DEBUG = "";
             Instance = new MainViewModel();
             BindingContext = Instance;
 
@@ -26,9 +22,6 @@ namespace CoTera
 
         void OnOptionsClicked(object sender, EventArgs e) => NavigationSystem.GoToOptionsAsync();
 
-        async void OnRefreshClicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("DEBUG",DEBUG,"OK");
-        }
+        void OnRefreshClicked(object sender, EventArgs e) => DataLoaderSystem.RefreshData();
     }
 }

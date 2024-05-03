@@ -4,6 +4,8 @@ using Octokit;
 
 namespace CoTera.Systems
 {
+    //TD: Optimize git connection so app dont use token
+    //Move all string to const
     internal static class DataLoaderSystem
     {
         //$("meta[name=octolytics-dimension-repository_id]").getAttribute('content')
@@ -79,6 +81,8 @@ namespace CoTera.Systems
 
         internal static async void LoadSelectedLabContent() => await FetchSelectedLabContent();
 
+        internal static async void RefreshData() => await FetchSavedData();
+
         static async Task FetchAllYears()
         {
             var loadedData = new List<string>();
@@ -141,6 +145,24 @@ namespace CoTera.Systems
 
             string savedData = "{Y}=" + SavedSelectedYear+"\n";
             savedData += "{L}=" + SavedSelectedLab+"\n";
+            savedData += "{JSON}\n" + LoadedJsonFile;
+
+            File.WriteAllText(MainDataFile, savedData);
+
+            GenerateAppDataBasedOnLoadedJsonFile();
+        }
+        static async Task FetchSavedData()
+        {
+            InitializeGitConnection();
+
+            string MainDataFile = Path.Combine(FileSystem.CacheDirectory + "/CoTera_SavedData.txt");
+
+            string selectedLabPath = "PlanyZajec/" + SavedSelectedYear + "/" + SavedSelectedLab + ".json";
+            var request = await GitClient.Repository.Content.GetAllContents(REPOID, selectedLabPath);
+            LoadedJsonFile = request[0].Content;
+
+            string savedData = "{Y}=" + SavedSelectedYear + "\n";
+            savedData += "{L}=" + SavedSelectedLab + "\n";
             savedData += "{JSON}\n" + LoadedJsonFile;
 
             File.WriteAllText(MainDataFile, savedData);

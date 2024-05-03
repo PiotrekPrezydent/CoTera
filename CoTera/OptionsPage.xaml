@@ -3,41 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CoTera.OptionsPage"
              Title="Options"
-             xmlns:viewmodel="clr-namespace:CoTera.ViewModels">
+             xmlns:viewmodel="clr-namespace:CoTera.ViewModels"
+             Shell.NavBarIsVisible="False">
     
-    <Grid RowDefinitions=".10*,.20*,.20*,.20*,.20*,.10*"
-          ColumnDefinitions=".20*,.60*,.20*"
+    <Grid RowDefinitions=".05*,.10*,.10*,.10*,.10*,.10*,.10*"
+          ColumnDefinitions=".05*,.90*,.05*"
           Padding="10"
           RowSpacing="50"
-          ColumnSpacing="10">
+          ColumnSpacing="10"
+          BackgroundColor="#31051D">
 
         <Picker Grid.Row="1"
                 Grid.Column="1"
                 Title="Wybierz Rok"
+                TitleColor="White"
+                TextColor="White"
                 ItemsSource="{Binding LoadedYears}"
-                SelectedIndex="{Binding SelectedYearIndex}"
-                >
-        </Picker>
+                SelectedIndex="{Binding SelectedYearIndex}" />
+
 
         <Picker Grid.Row="2"
                 Grid.Column="1"
                 Title="Wybierz Lab"
+                TitleColor="White"
+                TextColor="White"
                 ItemsSource="{Binding LoadedLabs}"
-                SelectedIndex="{Binding SelectedLabIndex}"
-                >
-        </Picker>
+                SelectedIndex="{Binding SelectedLabIndex}" />
 
-        <Button 
-            Grid.Row="3"
-            Grid.Column="1"
-            Text="Zapisz i wróć"
-            Clicked="OnSaveAndReturn"/>
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                BackgroundColor="#006BD1"
+                TextColor="White"
+                Text="Zapisz i wróć"
+                Clicked="OnSaveAndReturn"/>
+        
 
-        <Button 
-            Grid.Row="4"
-            Grid.Column="1"
-            Text="Informacje prawne"
-            Clicked="OnLegalInformationClick"/>
+        <Button Grid.Row="5"
+                Grid.Column="1"
+                BackgroundColor="#006BD1"
+                TextColor="White"
+                Text="Informacje prawne"
+                Clicked="OnLegalInformationClick"/>
 
     </Grid>
 </ContentPage>

@@ -5,6 +5,9 @@ using System.Data;
 
 namespace CoTera.ViewModels
 {
+    //td getweekspanasstring should be called only when changing week, the same goes with getweektype
+    //handle working with no internet
+    //add custom colors for app
     internal class MainViewModel : INotifyPropertyChanged
     {
         public string NameOfDay 
@@ -18,8 +21,6 @@ namespace CoTera.ViewModels
         }
         string _nameOfDay;
 
-        //Td: get week type from this site, this must be hardcodded
-        //https://www.ur.edu.pl/files/user_directory/899/organizacja%20roku%20akademickiego/Zarz%C4%85dzenie%20nr%2077_2023%20ws.%20organizacji%20roku%20akademickiego%202023-2024.pdf
         internal DateTime ChosenDate
         {
             get => _chosenDate;
@@ -72,7 +73,7 @@ namespace CoTera.ViewModels
 
             DayView day = LoadedDays[index];
 
-            CurrentDayClasses = day.Classes.Where(e => e.Week == "A+B" || e.Week == GetWeekType(ChosenDate)).Select(e => e.GetClassInfo()).ToList();
+            CurrentDayClasses = day.Classes.Where(e => e.Week == "A+B" || e.Week == GetWeekType(ChosenDate) || e.Week=="" ).Select(e => e.GetClassInfo()).ToList();
         }
 
         string GetWeekSpanAsString(DateTime date)

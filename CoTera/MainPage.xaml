@@ -2,58 +2,85 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CoTera.MainPage"
-             xmlns:viewmodel="clr-namespace:CoTera.ViewModels">
+             xmlns:viewmodel="clr-namespace:CoTera.ViewModels"
+             Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions=".10*,.80*,.10*"
           ColumnDefinitions=".20*,.60*,.20*"
           Padding="10"
           RowSpacing="10"
-          ColumnSpacing="10">
+          ColumnSpacing="10"
+          BackgroundColor="#31051D">
 
-        <Button
-            Grid.Row="0"
-            Grid.Column="0"
-            Text="&lt;&lt;"
-            Clicked="OnPreviousClicked"/>
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="#006BD1"
+                CornerRadius="30"
+                TextColor="White"
+                Text="&lt;&lt;"
+                Clicked="OnPreviousClicked"/>
 
-        <Label
-            Grid.Row="0"
-            Grid.Column="1"
-            Text="{Binding NameOfDay}"/>
-        
-        <Button 
-            Grid.Row="0"
-            Grid.Column="2"
-            Text="&gt;&gt;"
-            Clicked="OnNextClicked"/>
+        <Border Grid.Row="0"
+                Grid.Column="1"
+                BackgroundColor="#006BD1"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 30,30,30,30">
 
-        <CollectionView Grid.Row="1" Grid.ColumnSpan="3" 
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="{Binding NameOfDay}"/>
+
+        </Border>
+
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                BackgroundColor="#006BD1"
+                CornerRadius="30"
+                TextColor="White"
+                Text="&gt;&gt;"
+                Clicked="OnNextClicked"/>
+
+        <CollectionView Grid.Row="1" 
+                        Grid.ColumnSpan="3" 
                         ItemsSource="{Binding CurrentDayClasses}">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="0,5">
-                        <Frame>
+                        
+                        <Frame CornerRadius="45"
+                                BackgroundColor="#B78F09">
+                            
                             <Label Text="{Binding .}"
-                                   FontSize="24" />
+                                   FontSize="24" 
+                                   TextColor="Black"/>
+                            
                         </Frame>
+                        
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
         </CollectionView>
+
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                BackgroundColor="#006BD1"
+                CornerRadius="30"
+                FontSize="24"
+                TextColor="White"
+                Text="⟳"
+                Clicked="OnRefreshClicked"/>
+
+        <Button Grid.Row="2"
+                Grid.Column="3"
+                BackgroundColor="#006BD1"
+                CornerRadius="30"
+                FontSize="24"
+                TextColor="White"
+                Text="⚙"
+                Clicked="OnOptionsClicked"/>
         
-        <Button 
-            Grid.Row="2"
-            Grid.Column="0"
-            Text="Refresh"
-            Clicked="OnRefreshClicked"/>
-        <Button 
-            Grid.Row="2"
-            Grid.Column="2"
-            Text="Options"
-            Clicked="OnOptionsClicked"/>
-
     </Grid>
-
+    
 </ContentPage>
