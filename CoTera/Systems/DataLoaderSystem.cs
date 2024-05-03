@@ -17,6 +17,8 @@ namespace CoTera.Systems
 
         internal static string LoadedJsonFile = "";
 
+        internal static List<string> LoadedWeeksTypeA;
+
         internal const string GitHubToken = "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";
 
         internal static void InitializeGitConnection()
@@ -30,7 +32,10 @@ namespace CoTera.Systems
 
         internal static async void LoadSavedOrDefaultData()
         {
-            string MainDataFile = Path.Combine(FileSystem.CacheDirectory + "CoTera_SavedData.txt");
+            string MainDataFile = Path.Combine(FileSystem.CacheDirectory + "/CoTera_SavedData.txt");
+            string WeeksDataFile = Path.Combine(FileSystem.CacheDirectory + "/CoTera_WeeksTypeA.txt");
+
+            //load saved class plan
             if (File.Exists(MainDataFile))
             {
                 string load = File.ReadAllText(MainDataFile);
@@ -49,6 +54,21 @@ namespace CoTera.Systems
                 savedData+= "{JSON}\n" + LoadedJsonFile;
                 File.WriteAllText(MainDataFile, savedData);
             }
+
+            //load saved weeks type a
+            if (File.Exists(WeeksDataFile))
+                LoadedWeeksTypeA = File.ReadAllLines(WeeksDataFile).ToList();
+            else
+            {
+                await LoadWeeksTypeA();
+
+                string savedData = "";
+                for(int i=0;i< LoadedWeeksTypeA.Count; i++)
+                    savedData += LoadedWeeksTypeA[i] +"\n";
+
+                File.WriteAllText(WeeksDataFile,savedData);
+            }
+            MainPage.Instance.ChosenDate = DateTime.Now;
 
             GenerateAppDataBasedOnLoadedJsonFile();
         }
@@ -73,6 +93,14 @@ namespace CoTera.Systems
 
             //check if user selected any year previously, if so load that data
             OptionsPage.Instance.SelectedYearIndex = loadedData.IndexOf(SavedSelectedYear) != -1 ? loadedData.IndexOf(SavedSelectedYear) : 0;
+        }
+
+        static async Task LoadWeeksTypeA()
+        {
+            InitializeGitConnection();
+            string weeksDataPath = "Tygodnie/Tygodnie_A.json";
+            var request = await GitClient.Repository.Content.GetAllContents(REPOID, weeksDataPath);
+            LoadedWeeksTypeA = JArray.Parse(request[0].Content).Select(e=>e.ToString()).ToList();
         }
 
         static async Task LoadDefaultData()
@@ -109,7 +137,7 @@ namespace CoTera.Systems
             var request = await GitClient.Repository.Content.GetAllContents(REPOID, selectedLabPath);
             LoadedJsonFile = request[0].Content;
 
-            string MainDataFile = Path.Combine(FileSystem.CacheDirectory + "CoTera_SavedData.txt");
+            string MainDataFile = Path.Combine(FileSystem.CacheDirectory + "/CoTera_SavedData.txt");
 
             string savedData = "{Y}=" + SavedSelectedYear+"\n";
             savedData += "{L}=" + SavedSelectedLab+"\n";

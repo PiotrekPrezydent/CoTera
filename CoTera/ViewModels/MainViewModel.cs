@@ -1,5 +1,7 @@
-﻿using CoTera.Views;
+﻿using CoTera.Systems;
+using CoTera.Views;
 using System.ComponentModel;
+using System.Data;
 
 namespace CoTera.ViewModels
 {
@@ -24,7 +26,7 @@ namespace CoTera.ViewModels
             set
             {
                 _chosenDate = value;
-                NameOfDay = _chosenDate.DayOfWeek.ToString() + "\n" + GetWeekSpanAsString(_chosenDate);
+                NameOfDay = _chosenDate.DayOfWeek.ToString() + "\n" + GetWeekSpanAsString(_chosenDate) + "\n"+GetWeekType(_chosenDate);
                 ShowClassesForCurrentDay();
             }
         }
@@ -80,6 +82,17 @@ namespace CoTera.ViewModels
 
             string returnedValue = date.ToString().Substring(0, 10) + " - " + date.AddDays(6).ToString().Substring(0, 10);
             return returnedValue;
+        }
+
+        string GetWeekType(DateTime date)
+        {
+            if (DataLoaderSystem.LoadedWeeksTypeA == null)
+                return "?";
+
+            if (DataLoaderSystem.LoadedWeeksTypeA.Any(e => GetWeekSpanAsString(date).Contains(e)))
+                return "Week A";
+
+            return "Week B";
         }
 
         void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

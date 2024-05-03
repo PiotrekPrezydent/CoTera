@@ -1,5 +1,7 @@
 ﻿using CoTera.Systems;
 using CoTera.ViewModels;
+using Newtonsoft.Json.Linq;
+using Octokit;
 
 namespace CoTera
 {
@@ -14,7 +16,7 @@ namespace CoTera
             DEBUG = "";
             Instance = new MainViewModel();
             BindingContext = Instance;
-            
+
             DataLoaderSystem.LoadSavedOrDefaultData();
         }
 

@@ -4,7 +4,7 @@
              x:Class="CoTera.MainPage"
              xmlns:viewmodel="clr-namespace:CoTera.ViewModels">
 
-    <Grid RowDefinitions="50,.80*,50"
+    <Grid RowDefinitions=".10*,.80*,.10*"
           ColumnDefinitions=".20*,.60*,.20*"
           Padding="10"
           RowSpacing="10"
@@ -13,7 +13,7 @@
         <Button
             Grid.Row="0"
             Grid.Column="0"
-            Text="////"
+            Text="&lt;&lt;"
             Clicked="OnPreviousClicked"/>
 
         <Label
@@ -21,11 +21,10 @@
             Grid.Column="1"
             Text="{Binding NameOfDay}"/>
         
-
         <Button 
             Grid.Row="0"
             Grid.Column="2"
-            Text="\\\\"
+            Text="&gt;&gt;"
             Clicked="OnNextClicked"/>
 
         <CollectionView Grid.Row="1" Grid.ColumnSpan="3" 
