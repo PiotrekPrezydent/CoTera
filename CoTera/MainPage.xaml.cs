@@ -15,7 +15,7 @@ namespace CoTera
             DEBUG = "";
             Instance = new MainViewModel();
             BindingContext = Instance;
-
+            
             DataLoaderSystem.LoadSavedOrDefaultData();
         }
 

@@ -56,8 +56,8 @@ namespace CoTera.ViewModels
             LoadedYears = new List<string>();
             LoadedLabs = new List<string>();
 
-            LoadedYears.Add("-");
-            LoadedLabs.Add("-");
+            LoadedYears.Add(DataLoaderSystem.SavedSelectedYear);
+            LoadedLabs.Add(DataLoaderSystem.SavedSelectedLab);
 
             DataLoaderSystem.InitializeGitConnection();
         }
