@@ -1,6 +1,5 @@
 ﻿using CoTera.Systems;
 using CoTera.ViewModels;
-using Octokit;
 
 namespace CoTera
 {

@@ -6,7 +6,6 @@
 
         internal string TimeSpan;
 
-        //[JsonConstructor]
         internal ClassView(string name, string timeSpan)
         {
             Name = name;
