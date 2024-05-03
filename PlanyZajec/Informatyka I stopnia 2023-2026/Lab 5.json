@@ -1,0 +1,135 @@
+{
+    "PON": [
+        { 
+            "nazwa": "Systemy operacyjne", 
+            "sala" : "308 B4", 
+            "godziny": "8:00 - 9:30",
+            "rodzaj" : "laby",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Bazy danych", 
+            "sala" : "308 B4", 
+            "godziny": "9:45 - 11:15",
+            "rodzaj" : "laby",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Metody numeryczne", 
+            "sala" : "126 B1", 
+            "godziny": "11:30 - 13:00",
+            "rodzaj" : "wykład",
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Teoria zbiorów rozmytych", 
+            "sala" : "126 B1", 
+            "godziny": "11:30 - 13:00",
+            "rodzaj" : "wykład",
+            "tydzien" : "B"
+        },
+        { 
+            "nazwa": "Algorytmy i struktury danych", 
+            "sala" : "126 B1", 
+            "godziny": "15:00 - 16:30",
+            "rodzaj" : "ćwiczenia",
+            "tydzien" : "A"
+        }
+      ],
+
+      "WT": [
+        { 
+            "nazwa": "Programowanie Obiektowe", 
+            "sala" : "308 B4", 
+            "godziny": "8:30 - 11:00",
+            "rodzaj" : "laby",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Metody numeryczne", 
+            "sala" : "177 B2", 
+            "godziny": "11:15 - 12:45",
+            "rodzaj" : "ćwiczenia",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Jezyk angielski", 
+            "sala" : "231 B1", 
+            "godziny": "13:00 - 14:30",
+            "rodzaj" : "ćwiczenia",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Teoria zbiorów rozmytych", 
+            "sala" : "179 B2", 
+            "godziny": "14:45 - 16:15",
+            "rodzaj" : "ćwiczenia",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Algorytmy i struktury danych", 
+            "sala" : "126 B1", 
+            "godziny": "15:00 - 16:30",
+            "rodzaj" : "ćwiczenia",
+            "tydzien" : "A"
+        }
+      ],
+
+      "SR": [
+        { 
+            "nazwa": "Matematyka dyskretna", 
+            "sala" : "248 B2", 
+            "godziny": "9:00 - 10:30",
+            "rodzaj" : "ćwiczenia",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Rachunek prawdopodobieństwa i statystyka", 
+            "sala" : "266 B2", 
+            "godziny": "10:45 - 12:15",
+            "rodzaj" : "ćwiczenia",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Programowanie Obiektowe", 
+            "sala" : "126 B1", 
+            "godziny": "12:30 - 15:00",
+            "rodzaj" : "wykład",
+            "tydzien" : "A+B"
+        }
+      ],
+
+      "CZW": [
+        { 
+            "nazwa": "Matematyka dyskretna", 
+            "sala" : "126 B1", 
+            "godziny": "9:45 - 11:15",
+            "rodzaj" : "wykład",
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Rachunek prawdopodobieństwa i statystyka", 
+            "sala" : "126 B1", 
+            "godziny": "9:45 - 11:15",
+            "rodzaj" : "wykład",
+            "tydzien" : "B"
+        },
+        { 
+            "nazwa": "Algorytmy i struktury danych", 
+            "sala" : "126 B1", 
+            "godziny": "12:00 - 13:30",
+            "rodzaj" : "wykład",
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Bazy danych", 
+            "sala" : "126 B1", 
+            "godziny": "13:45 - 15:15",
+            "rodzaj" : "wykład",
+            "tydzien" : "A+B"
+        }
+      ],
+      
+      "PT": [
+      ]  
+}
