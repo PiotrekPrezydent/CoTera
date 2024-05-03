@@ -158,7 +158,7 @@ namespace CoTera.Systems
 
                 List<ClassView> classes = new List<ClassView>();
                 foreach (var rawClass in rawClassesViews)
-                    classes.Add(new ClassView(rawClass["nazwa"].ToString(), rawClass["godziny"].ToString()));
+                    classes.Add(new ClassView(rawClass));
 
                 MainPage.Instance.LoadedDays[i] = new DayView((DayOfWeek)i + 1, classes.ToArray());
             }

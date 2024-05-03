@@ -26,7 +26,7 @@ namespace CoTera.ViewModels
             set
             {
                 _chosenDate = value;
-                NameOfDay = _chosenDate.DayOfWeek.ToString() + "\n" + GetWeekSpanAsString(_chosenDate) + "\n"+GetWeekType(_chosenDate);
+                NameOfDay = _chosenDate.DayOfWeek.ToString() + "\n" + GetWeekSpanAsString(_chosenDate) + "\nWeek: "+GetWeekType(_chosenDate);
                 ShowClassesForCurrentDay();
             }
         }
@@ -72,7 +72,7 @@ namespace CoTera.ViewModels
 
             DayView day = LoadedDays[index];
 
-            CurrentDayClasses = day.Classes.Select(e => e.Name + "\n" + e.TimeSpan).ToList();
+            CurrentDayClasses = day.Classes.Where(e => e.Week == "A+B" || e.Week == GetWeekType(ChosenDate)).Select(e => e.GetClassInfo()).ToList();
         }
 
         string GetWeekSpanAsString(DateTime date)
@@ -90,9 +90,9 @@ namespace CoTera.ViewModels
                 return "?";
 
             if (DataLoaderSystem.LoadedWeeksTypeA.Any(e => GetWeekSpanAsString(date).Contains(e)))
-                return "Week A";
+                return "A";
 
-            return "Week B";
+            return "B";
         }
 
         void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
