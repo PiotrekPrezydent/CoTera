@@ -10,7 +10,7 @@
           Padding="10"
           RowSpacing="10"
           ColumnSpacing="10"
-          BackgroundColor="#31051D">
+          BackgroundColor="#512CD4">
 
         <Button Grid.Row="0"
                 Grid.Column="0"
@@ -23,11 +23,13 @@
         <Border Grid.Row="0"
                 Grid.Column="1"
                 BackgroundColor="#006BD1"
-                StrokeThickness="0"
+                StrokeThickness="0.2"
+                Stroke="Black"
                 StrokeShape="RoundRectangle 30,30,30,30">
 
             <Label HorizontalOptions="Center"
                    VerticalOptions="Center"
+                   TextColor="White"
                    Text="{Binding NameOfDay}"/>
 
         </Border>

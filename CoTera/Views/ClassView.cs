@@ -16,15 +16,15 @@ namespace CoTera.Views
 
         internal ClassView(JToken rawClass)
         {
-            Name = rawClass["nazwa"] == null ? "" : rawClass["nazwa"].ToString();
+            Name = rawClass["nazwa"] == null ? "" : rawClass["nazwa"]!.ToString();
 
-            TimeSpan = rawClass["godziny"] == null ? "" : rawClass["godziny"].ToString();
+            TimeSpan = rawClass["godziny"] == null ? "" : rawClass["godziny"]!.ToString();
 
-            Room = rawClass["sala"] == null ? "" : rawClass["sala"].ToString();
+            Room = rawClass["sala"] == null ? "" : rawClass["sala"]!.ToString();
 
-            Type = rawClass["rodzaj"] == null ? "" : rawClass["rodzaj"].ToString();
+            Type = rawClass["rodzaj"] == null ? "" : rawClass["rodzaj"]!.ToString();
 
-            Week = rawClass["tydzien"] == null ? "" : rawClass["tydzien"].ToString();
+            Week = rawClass["tydzien"] == null ? "" : rawClass["tydzien"]!.ToString();
         }
 
         internal string GetClassInfo() => Name + "\n" + TimeSpan + "\n" + Type + "\n" + Room;

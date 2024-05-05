@@ -69,7 +69,7 @@ namespace CoTera.ViewModels
             DataLoaderSystem.SavedSelectedYear = LoadedYears[SelectedYearIndex];
             DataLoaderSystem.SavedSelectedLab = LoadedLabs[SelectedLabIndex];
 
-            DataLoaderSystem.LoadSelectedLabContent();
+            DataLoaderSystem.GetSelectedOptionsContent();
         }
         void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }

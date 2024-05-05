@@ -11,7 +11,7 @@
           Padding="10"
           RowSpacing="50"
           ColumnSpacing="10"
-          BackgroundColor="#31051D">
+          BackgroundColor="#512CD4">
 
         <Picker Grid.Row="1"
                 Grid.Column="1"
