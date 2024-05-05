@@ -1,0 +1,121 @@
+{
+    "PON": [
+        { 
+            "nazwa": "Przykładowe zajecia w poniedziałek w tygodniu A oraz B", 
+            "godziny": "10:00-11:30",
+            "rodzaj" : "Wykład",
+            "sala" : "101 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia w poniedziałek w tygodniu A", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia w poniedziałek w tygodniu B", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "B"
+        }
+    ],
+
+    "WT": [
+        { 
+            "nazwa": "Przykładowe zajecia we wtorek w tygodniu A oraz B", 
+            "godziny": "10:00-11:30",
+            "rodzaj" : "Wykład",
+            "sala" : "101 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia we wtorek w tygodniu A", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia we wtorek w tygodniu B", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "B"
+        }
+    ],
+
+    "SR": [
+        { 
+            "nazwa": "Przykładowe zajecia w środe w tygodniu A oraz B", 
+            "godziny": "10:00-11:30",
+            "rodzaj" : "Wykład",
+            "sala" : "101 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia w środe w tygodniu A", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia w środe w tygodniu B", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "B"
+        }
+    ],
+
+    "CZW": [
+        { 
+            "nazwa": "Przykładowe zajecia w czwartek w tygodniu A oraz B", 
+            "godziny": "10:00-11:30",
+            "rodzaj" : "Wykład",
+            "sala" : "101 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia w czwartek w tygodniu A", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia w czwartek w tygodniu B", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "B"
+        }
+    ],
+      
+    "PT": [
+        { 
+            "nazwa": "Przykładowe zajecia w piątek w tygodniu A oraz B", 
+            "godziny": "10:00-11:30",
+            "rodzaj" : "Wykład",
+            "sala" : "101 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia w piątek w tygodniu A", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Przykładowe zajecia w piątek w tygodniu B", 
+            "godziny": "11:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "101 B2", 
+            "tydzien" : "B"
+        }
+    ]  
+}

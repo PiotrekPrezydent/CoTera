@@ -80,10 +80,10 @@ namespace CoTera.Systems
                 if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
                     return;
 
-                await FetchAndSetJsonFileContentFromLink("PlanyZajec/ExampleFolder/ExLab1.json");
+                await FetchAndSetJsonFileContentFromLink("PlanyZajec/PrzykladowyRok/DomyslnaGrupa.json");
 
-                SavedSelectedYear = "ExampleFolder";
-                SavedSelectedLab = "ExLab1";
+                SavedSelectedYear = "PrzykladowyRok";
+                SavedSelectedLab = "DomyslnaGrupa";
 
                 SaveDataToCache();
             }
