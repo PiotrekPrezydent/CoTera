@@ -22,7 +22,7 @@ namespace CoTera.Systems
 
         internal static List<string>? LoadedWeeksTypeA;
 
-        internal const string GitHubToken = "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";
+        internal const string GitHubToken = "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";
 
         internal static void InitializeGitConnection()
         {
