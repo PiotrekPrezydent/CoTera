@@ -22,7 +22,6 @@ namespace CoTera.Systems
 
         internal static List<string>? LoadedWeeksTypeA;
 
-        internal const string GitHubToken = "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";
 
         internal static void InitializeGitConnection()
         {
@@ -30,7 +29,6 @@ namespace CoTera.Systems
                 return;
 
             GitClient = new GitHubClient(new ProductHeaderValue("GettingDataFromGitDB"));
-            GitClient.Credentials = new Credentials(GitHubToken);
         }
 
         static void SaveDataToCache()
