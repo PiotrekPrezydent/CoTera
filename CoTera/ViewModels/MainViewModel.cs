@@ -6,8 +6,6 @@ using System.Data;
 namespace CoTera.ViewModels
 {
     //td getweekspanasstring should be called only when changing week, the same goes with getweektype
-    //handle working with no internet
-    //add custom colors for app
     internal class MainViewModel : INotifyPropertyChanged
     {
         public string NameOfDay 

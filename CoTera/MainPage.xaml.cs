@@ -6,7 +6,7 @@ namespace CoTera
     public partial class MainPage : ContentPage
     {
         internal static MainViewModel? Instance;
-
+        
         public MainPage()
         {
             InitializeComponent();
@@ -22,12 +22,6 @@ namespace CoTera
 
         void OnOptionsClicked(object sender, EventArgs e) => NavigationSystem.GoToOptionsAsync();
 
-        void OnRefreshClicked(object sender, EventArgs e)
-        {
-            try { DataLoaderSystem.GetSelectedOptionsContent(); } 
-            catch { AlertNoInternetConnection(); }
-        }
-
-        async void AlertNoInternetConnection() => await DisplayAlert("Brak połączenia z internetem", "Aplikacja niemogła wykonać akcji ponieważ niewykryto połączenie z internetem\n Jeżeli problem będzie występować mimo to proszę skontaktować się z administratorem aplikacji", "OK");
+        void OnRefreshClicked(object sender, EventArgs e) => DataLoaderSystem.GetSelectedOptionsContent();
     }
 }

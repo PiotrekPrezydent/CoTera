@@ -5,6 +5,7 @@ using Octokit;
 namespace CoTera.Systems
 {
     //TD: Optimize git connection so app dont use token
+    //Optimize checking if there is internet connection, maybe call alert if there is no
     //Move all string to const
     internal static class DataLoaderSystem
     {
@@ -21,7 +22,7 @@ namespace CoTera.Systems
 
         internal static List<string>? LoadedWeeksTypeA;
 
-        internal const string GitHubToken = "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";
+        internal const string GitHubToken = "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";
 
         internal static void InitializeGitConnection()
         {
@@ -78,6 +79,9 @@ namespace CoTera.Systems
             }
             else
             {
+                if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                    return;
+
                 await FetchAndSetJsonFileContentFromLink("PlanyZajec/ExampleFolder/ExLab1.json");
 
                 SavedSelectedYear = "ExampleFolder";
@@ -91,6 +95,9 @@ namespace CoTera.Systems
                 LoadedWeeksTypeA = File.ReadAllLines(WeeksDataFile).ToList();
             else
             {
+                if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                    return;
+
                 await FetchWeeksTypeA();
 
                 string savedData = "";
@@ -113,6 +120,9 @@ namespace CoTera.Systems
 
         static async Task FetchAllYears()
         {
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                return;
+
             var loadedData = new List<string>();
 
             var contents = await GitClient!.Repository.Content.GetAllContents(REPOID, "PlanyZajec");
@@ -129,6 +139,9 @@ namespace CoTera.Systems
 
         static async Task FetchLabsForCurrentYear()
         {
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                return;
+
             if (OptionsPage.Instance!.SelectedYearIndex == -1 || OptionsPage.Instance.LoadedYears[0] == "-")
                 return;
 
@@ -147,6 +160,9 @@ namespace CoTera.Systems
         }
         static async Task FetchSelectedOptionsData()
         {
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                return;
+
             await FetchAndSetJsonFileContentFromLink("PlanyZajec/" + SavedSelectedYear + "/" + SavedSelectedLab + ".json");
 
             SaveDataToCache();
@@ -155,6 +171,9 @@ namespace CoTera.Systems
 
         static async Task FetchWeeksTypeA()
         {
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                return;
+
             InitializeGitConnection();
             var request = await GitClient!.Repository.Content.GetAllContents(REPOID, "Tygodnie/Tygodnie_A.json");
 
@@ -163,6 +182,9 @@ namespace CoTera.Systems
 
         static async Task FetchAndSetJsonFileContentFromLink(string link)
         {
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                return;
+
             InitializeGitConnection();
             var request = await GitClient!.Repository.Content.GetAllContents(REPOID, link);
 

@@ -14,9 +14,7 @@ namespace CoTera
             Instance = new OptionsViewModel();
             BindingContext = Instance;
 
-            try { DataLoaderSystem.GetAllYears(); }
-            catch { AlertNoInternetConnection(); }
-
+           DataLoaderSystem.GetAllYears();
         }
 
         async void OnLegalInformationClick(object sender, EventArgs e) =>
@@ -33,10 +31,5 @@ namespace CoTera
             NavigationSystem.GoBackToMainAsync();
         }
 
-        async void AlertNoInternetConnection() => 
-            await DisplayAlert("Brak po³¹czenia z internetem", 
-                "Aplikacja niemog³a wykonaæ akcji poniewa¿ niewykryto po³¹czenie z internetem\n Je¿eli problem bêdzie wystêpowaæ mimo to proszê skontaktowaæ siê z administratorem aplikacji", 
-                "OK"
-            );
     }
 }
