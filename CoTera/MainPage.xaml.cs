@@ -12,7 +12,7 @@ namespace CoTera
             InitializeComponent();
             Instance = new MainViewModel();
             BindingContext = Instance;
-
+            DataLoaderSystem.CurrentPage = this;
             DataLoaderSystem.LoadSavedOrDefaultData();
         }
 

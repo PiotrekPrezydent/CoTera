@@ -56,10 +56,8 @@ namespace CoTera.ViewModels
             LoadedYears = new List<string>();
             LoadedLabs = new List<string>();
 
-            LoadedYears.Add(DataLoaderSystem.SavedSelectedYear);
-            LoadedLabs.Add(DataLoaderSystem.SavedSelectedLab);
-
-            DataLoaderSystem.InitializeGitConnection();
+            LoadedYears.Add(DataLoaderSystem.SavedSelectedYear!);
+            LoadedLabs.Add(DataLoaderSystem.SavedSelectedLab!);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

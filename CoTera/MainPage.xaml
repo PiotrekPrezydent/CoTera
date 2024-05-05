@@ -51,7 +51,7 @@
                     <Grid Padding="0,5">
                         
                         <Frame CornerRadius="45"
-                                BackgroundColor="#B78F09">
+                                BackgroundColor="#6135FF">
                             
                             <Label Text="{Binding .}"
                                    FontSize="24" 

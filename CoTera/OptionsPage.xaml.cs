@@ -13,8 +13,8 @@ namespace CoTera
 
             Instance = new OptionsViewModel();
             BindingContext = Instance;
-
-           DataLoaderSystem.GetAllYears();
+            DataLoaderSystem.CurrentPage = this;
+            DataLoaderSystem.GetAllYears();
         }
 
         async void OnLegalInformationClick(object sender, EventArgs e) =>

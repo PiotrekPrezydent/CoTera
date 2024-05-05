@@ -1,6 +1,7 @@
 ﻿using CoTera.Views;
 using Newtonsoft.Json.Linq;
 using Octokit;
+using System.Text;
 
 namespace CoTera.Systems
 {
@@ -16,20 +17,12 @@ namespace CoTera.Systems
 
         internal static string? SavedSelectedLab;
 
-        internal static GitHubClient? GitClient;
-
+        internal static GitHubClient? GitClient = new GitHubClient(new ProductHeaderValue("GettingDataFromGitDB"));
         internal static string LoadedJsonFile = "";
 
         internal static List<string>? LoadedWeeksTypeA;
 
-
-        internal static void InitializeGitConnection()
-        {
-            if (GitClient != null)
-                return;
-
-            GitClient = new GitHubClient(new ProductHeaderValue("GettingDataFromGitDB"));
-        }
+        internal static ContentPage CurrentPage;
 
         static void SaveDataToCache()
         {
@@ -78,7 +71,10 @@ namespace CoTera.Systems
             else
             {
                 if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                {
+                    Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
                     return;
+                }
 
                 await FetchAndSetJsonFileContentFromLink("PlanyZajec/PrzykladowyRok/DomyslnaGrupa.json");
 
@@ -94,7 +90,10 @@ namespace CoTera.Systems
             else
             {
                 if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+                {
+                    Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
                     return;
+                }
 
                 await FetchWeeksTypeA();
 
@@ -116,29 +115,44 @@ namespace CoTera.Systems
 
         internal static async void GetSelectedOptionsContent() => await FetchSelectedOptionsData();
 
+        internal static async void Alert(string title, string message, string cancel) => await CurrentPage!.DisplayAlert(title, message, cancel);
+
         static async Task FetchAllYears()
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+            {
+                Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
                 return;
+            }
 
             var loadedData = new List<string>();
+            try
+            {
+                var contents = await GitClient!.Repository.Content.GetAllContents(REPOID, "PlanyZajec");
 
-            var contents = await GitClient!.Repository.Content.GetAllContents(REPOID, "PlanyZajec");
+                foreach (var year in contents)
+                    if (year.Type == ContentType.Dir)
+                        loadedData.Add(year.Name);
 
-            foreach (var year in contents)
-                if (year.Type == ContentType.Dir)
-                    loadedData.Add(year.Name);
+                OptionsPage.Instance!.LoadedYears = loadedData;
 
-            OptionsPage.Instance!.LoadedYears = loadedData;
+                //check if user selected any year previously, if so load that data
+                OptionsPage.Instance.SelectedYearIndex = loadedData.IndexOf(SavedSelectedYear!) != -1 ? loadedData.IndexOf(SavedSelectedYear!) : 0;
+            }
+            catch
+            {
+                Alert("Limit zapytań", "Wykorzystano limit zapytań dla twojego IP, proszę spróbować ponownie za godzinę.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
+            }
 
-            //check if user selected any year previously, if so load that data
-            OptionsPage.Instance.SelectedYearIndex = loadedData.IndexOf(SavedSelectedYear!) != -1 ? loadedData.IndexOf(SavedSelectedYear!) : 0;
         }
 
         static async Task FetchLabsForCurrentYear()
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+            {
+                Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
                 return;
+            }
 
             if (OptionsPage.Instance!.SelectedYearIndex == -1 || OptionsPage.Instance.LoadedYears[0] == "-")
                 return;
@@ -146,20 +160,30 @@ namespace CoTera.Systems
             string selectedLabPath = "PlanyZajec/" + OptionsPage.Instance.LoadedYears[OptionsPage.Instance.SelectedYearIndex];
 
             var loadedData = new List<string>();
+            try
+            {
+                var contents = await GitClient!.Repository.Content.GetAllContents(REPOID, selectedLabPath);
 
-            var contents = await GitClient!.Repository.Content.GetAllContents(REPOID, selectedLabPath);
+                foreach (var lab in contents)
+                    if (lab.Type == ContentType.File)
+                        loadedData.Add(lab.Name.Substring(0, lab.Name.IndexOf(".json")));
 
-            foreach (var lab in contents)
-                if (lab.Type == ContentType.File)
-                    loadedData.Add(lab.Name.Substring(0, lab.Name.IndexOf(".json")));
+                OptionsPage.Instance.LoadedLabs = loadedData;
+                OptionsPage.Instance.SelectedLabIndex = loadedData.IndexOf(SavedSelectedLab!) != -1 ? loadedData.IndexOf(SavedSelectedLab!) : 0;
+            }
+            catch
+            {
+                Alert("Limit zapytań", "Wykorzystano limit zapytań dla twojego IP, proszę spróbować ponownie za godzinę.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
+            }
 
-            OptionsPage.Instance.LoadedLabs = loadedData;
-            OptionsPage.Instance.SelectedLabIndex = loadedData.IndexOf(SavedSelectedLab!) != -1 ? loadedData.IndexOf(SavedSelectedLab!) : 0;
         }
         static async Task FetchSelectedOptionsData()
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+            {
+                Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
                 return;
+            }
 
             await FetchAndSetJsonFileContentFromLink("PlanyZajec/" + SavedSelectedYear + "/" + SavedSelectedLab + ".json");
 
@@ -170,23 +194,41 @@ namespace CoTera.Systems
         static async Task FetchWeeksTypeA()
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+            {
+                Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
                 return;
+            }
 
-            InitializeGitConnection();
-            var request = await GitClient!.Repository.Content.GetAllContents(REPOID, "Tygodnie/Tygodnie_A.json");
+            try
+            {
+                var request = await GitClient!.Repository.Content.GetAllContents(REPOID, "Tygodnie/Tygodnie_A.json");
+                LoadedWeeksTypeA = JArray.Parse(request[0].Content).Select(e => e.ToString()).ToList();
+            }
+            catch
+            {
+                Alert("Limit zapytań", "Wykorzystano limit zapytań dla twojego IP, proszę spróbować ponownie za godzinę.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
+            }
 
-            LoadedWeeksTypeA = JArray.Parse(request[0].Content).Select(e => e.ToString()).ToList();
         }
 
         static async Task FetchAndSetJsonFileContentFromLink(string link)
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+            {
+                Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
                 return;
+            }
 
-            InitializeGitConnection();
-            var request = await GitClient!.Repository.Content.GetAllContents(REPOID, link);
 
-            LoadedJsonFile = request[0].Content;
+            try
+            {
+                var request = await GitClient!.Repository.Content.GetAllContents(REPOID, link);
+                LoadedJsonFile = request[0].Content;
+            }
+            catch
+            {
+                Alert("Limit zapytań", "Wykorzystano limit zapytań dla twojego IP, proszę spróbować ponownie za godzinę.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem","OK");
+            }
         }
     }
 }
