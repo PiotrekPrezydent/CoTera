@@ -1,76 +1,156 @@
 {
     "PON": [
         { 
-            "nazwa": "ExLab1P", 
-            "godziny": "9:00 AM - 5:00 PM" 
+            "nazwa": "Załadowano przykładowe dane", 
+            "godziny": "Wejdź w opcje aby wybrać swój rok oraz grupe",
+            "rodzaj" : "Oczywiście musisz mieć do tego połączenie z internetem",
+            "sala" : "Jeżeli chcesz dodać swój rok / grupe skontaktuj się z administratorem", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1P", 
-            "godziny": "10:00 AM - 6:00 PM" 
+            "nazwa": "Tutaj podaj nazwe dla danych zajec np. Matematyka", 
+            "godziny": "Tutaj podaj przedział godzin w jakich te zajęcia trwają np. 9:45 - 11:15",
+            "rodzaj" : "Tutaj rodzaj zajęć które się odbywają np. Wykład / Laby",
+            "sala" : "Tutaj podaj sale w której zajęcia się odbywają np. 101 B2 A0", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1P", 
-            "godziny": "11:00 AM - 7:00 PM" 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu A", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu B", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "B"
         }
-      ],
+    ],
 
-      "WT": [
+    "WT": [
         { 
-            "nazwa": "ExLab1WT", 
-            "godziny": "9:00 AM - 5:00 PM" 
+            "nazwa": "Załadowano przykładowe dane", 
+            "godziny": "Wejdź w opcje aby wybrać swój rok oraz grupe",
+            "rodzaj" : "Oczywiście musisz mieć do tego połączenie z internetem",
+            "sala" : "Jeżeli chcesz dodać swój rok / grupe skontaktuj się z administratorem", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1WT", 
-            "godziny": "10:00 AM - 6:00 PM" 
+            "nazwa": "Tutaj podaj nazwe dla danych zajec np. Matematyka", 
+            "godziny": "Tutaj podaj przedział godzin w jakich te zajęcia trwają np. 9:45 - 11:15",
+            "rodzaj" : "Tutaj rodzaj zajęć które się odbywają np. Wykład / Laby",
+            "sala" : "Tutaj podaj sale w której zajęcia się odbywają np. 101 B2 A0", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1WT", 
-            "godziny": "11:00 AM - 7:00 PM" 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu A", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu B", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "B"
         }
-      ],
+    ],
 
-      "SR": [
+    "SR": [
         { 
-            "nazwa": "ExLab1SR", 
-            "godziny": "9:00 AM - 5:00 PM" 
+            "nazwa": "Załadowano przykładowe dane", 
+            "godziny": "Wejdź w opcje aby wybrać swój rok oraz grupe",
+            "rodzaj" : "Oczywiście musisz mieć do tego połączenie z internetem",
+            "sala" : "Jeżeli chcesz dodać swój rok / grupe skontaktuj się z administratorem", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1SR", 
-            "godziny": "10:00 AM - 6:00 PM" 
+            "nazwa": "Tutaj podaj nazwe dla danych zajec np. Matematyka", 
+            "godziny": "Tutaj podaj przedział godzin w jakich te zajęcia trwają np. 9:45 - 11:15",
+            "rodzaj" : "Tutaj rodzaj zajęć które się odbywają np. Wykład / Laby",
+            "sala" : "Tutaj podaj sale w której zajęcia się odbywają np. 101 B2 A0", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1SR", 
-            "godziny": "11:00 AM - 7:00 PM" 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu A", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu B", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "B"
         }
-      ],
+    ],
 
-      "CZW": [
+    "CZW": [
         { 
-            "nazwa": "ExLab1CZW", 
-            "godziny": "9:00 AM - 5:00 PM" 
+            "nazwa": "Załadowano przykładowe dane", 
+            "godziny": "Wejdź w opcje aby wybrać swój rok oraz grupe",
+            "rodzaj" : "Oczywiście musisz mieć do tego połączenie z internetem",
+            "sala" : "Jeżeli chcesz dodać swój rok / grupe skontaktuj się z administratorem", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1CZW", 
-            "godziny": "10:00 AM - 6:00 PM" 
+            "nazwa": "Tutaj podaj nazwe dla danych zajec np. Matematyka", 
+            "godziny": "Tutaj podaj przedział godzin w jakich te zajęcia trwają np. 9:45 - 11:15",
+            "rodzaj" : "Tutaj rodzaj zajęć które się odbywają np. Wykład / Laby",
+            "sala" : "Tutaj podaj sale w której zajęcia się odbywają np. 101 B2 A0", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1CZW", 
-            "godziny": "11:00 AM - 7:00 PM" 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu A", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu B", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "B"
         }
-      ],
+    ],
       
-      "PT": [
+    "PT": [
         { 
-            "nazwa": "ExLab1PT", 
-            "godziny": "9:00 AM - 5:00 PM" 
+            "nazwa": "Załadowano przykładowe dane", 
+            "godziny": "Wejdź w opcje aby wybrać swój rok oraz grupe",
+            "rodzaj" : "Oczywiście musisz mieć do tego połączenie z internetem",
+            "sala" : "Jeżeli chcesz dodać swój rok / grupe skontaktuj się z administratorem", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1PT", 
-            "godziny": "10:00 AM - 6:00 PM" 
+            "nazwa": "Tutaj podaj nazwe dla danych zajec np. Matematyka", 
+            "godziny": "Tutaj podaj przedział godzin w jakich te zajęcia trwają np. 9:45 - 11:15",
+            "rodzaj" : "Tutaj rodzaj zajęć które się odbywają np. Wykład / Laby",
+            "sala" : "Tutaj podaj sale w której zajęcia się odbywają np. 101 B2 A0", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "ExLab1PT", 
-            "godziny": "11:00 AM - 7:00 PM" 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu A", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "To jest przykładowy przedmiot który pojawia się tylko w tygodniu B", 
+            "godziny": "-",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "B"
         }
-      ]  
+    ]  
 }
