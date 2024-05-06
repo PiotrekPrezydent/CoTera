@@ -1,0 +1,128 @@
+{
+    "PON": [
+        { 
+            "nazwa": "Język polski dla obcokrajowców", 
+            "godziny": "8:00-9:30",
+            "rodzaj" : "-",
+            "sala" : "-", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Zarządzanie środowiskiem", 
+            "godziny": "9:45-11:15",
+            "rodzaj" : "Wykład",
+            "sala" : "D9-340", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Analiza danych w sektorze rolno-spożywczym", 
+            "godziny": "9:45-11:15",
+            "rodzaj" : "Wykład",
+            "sala" : "D9-340", 
+            "tydzien" : "B"
+        },
+        { 
+            "nazwa": "Zarządzanie środowiskiem", 
+            "godziny": "11:30-13:00",
+            "rodzaj" : "Ćwiczenia",
+            "sala" : "D9-340", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Grafika inżynierska", 
+            "godziny": "11:30-13:00",
+            "rodzaj" : "Wykład",
+            "sala" : "D9-340", 
+            "tydzien" : "B"
+        },
+        { 
+            "nazwa": "Produkcja zwierzęca", 
+            "godziny": "13:15-15:45",
+            "rodzaj" : "Laby",
+            "sala" : "D9-342", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Grafika inżynierska", 
+            "godziny": "16:00-18:30",
+            "rodzaj" : "Laby",
+            "sala" : "D9-113", 
+            "tydzien" : "A+B"
+        }
+    ],
+
+    "WT": [
+        { 
+            "nazwa": "WF", 
+            "godziny": "8:30-10:00",
+            "rodzaj" : "-",
+            "sala" : "Zalesie", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Produkcja surowców roślinnych", 
+            "godziny": "10:30-12:00",
+            "rodzaj" : "Wykład",
+            "sala" : "D3-40", 
+            "tydzien" : "A+B"
+        }
+    ],
+
+    "SR": [
+        { 
+            "nazwa": "Analiza danych w sektorze rolno-spożywczym", 
+            "godziny": "9:00-10:30",
+            "rodzaj" : "Laby",
+            "sala" : "D9-132", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Produkcja surowców roślinnych", 
+            "godziny": "10:45-13:15",
+            "rodzaj" : "Laby",
+            "sala" : "D9-315", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Produkcja zwierzęca", 
+            "godziny": "13:30-15:00",
+            "rodzaj" : "Wykład",
+            "sala" : "D9-340", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Ekologistyka", 
+            "godziny": "15:15-16:45",
+            "rodzaj" : "Wykład",
+            "sala" : "D3-40", 
+            "tydzien" : "A+B"
+        }
+    ],
+
+    "CZW": [
+        { 
+            "nazwa": "Angielski / Niemiecki", 
+            "godziny": "11:30-13:00",
+            "rodzaj" : "Ćwiczenia",
+            "sala" : "D9-337 / D9-125", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Finanse i rachunkowość", 
+            "godziny": "13:15-14:45",
+            "rodzaj" : "Wykład",
+            "sala" : "D9-340", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Finanse i rachunkowość", 
+            "godziny": "15:00-17:30",
+            "rodzaj" : "Ćwiczenia",
+            "sala" : "D9-340", 
+            "tydzien" : "A+B"
+        }
+    ],
+      
+    "PT": [
+    ]  
+}
