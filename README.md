@@ -48,27 +48,27 @@ Z racji tego że aplikacja na ten moment niema dostępu do planu zajęć wszystk
 Tutaj dokładnie takie same zasady jak u góry najlepiej będzię jak albo zrobisz Pull Requesta albo napiszesz mi w wiadomości na teams `Piotr Prezydent` | `PP131497` z informacją co zmienić / co poprawić.
 
 ### FAQ
-Q: Czy jest to oficjalna aplikacja uniwersytetu rzeszowskiego
+Q: Czy jest to oficjalna aplikacja uniwersytetu rzeszowskiego<br/>
 A: Nie, projekt zrobiłem samemu z nudów i nic z niego niemam
 
-Q: Czy mam pewność że w aplikacji nieznajdują się żadne wirusy / niepobiera moich danych
+Q: Czy mam pewność że w aplikacji nieznajdują się żadne wirusy / niepobiera moich danych<br/>
 A: Tak, kod źródłowy aplikacji jest dostępny w tym repozytorium i każdy ma wgląd do tego jak ta aplikacja dokładnie działa (nic złego nierobi)
 
-Q: Czy aplikacja potrzebuje połączenia z internetem
+Q: Czy aplikacja potrzebuje połączenia z internetem<br/>
 A: Tylko do momentu wybrania swojego kierunku i grupy, później aplikacja działa bez internetu
 
-Q: Kiedy mogę się spodziewać dodanie mojego kierunku/grupy
+Q: Kiedy mogę się spodziewać dodanie mojego kierunku/grupy<br/>
 A: Jak dostane wiadomość na teams postaram się o natychmiast poinformować kiedy mniej więcej dodam ten plan zajęć i dam znać kiedy już dodam
 
-Q: Czy aplikacje trzeba często aktualizować
+Q: Czy aplikacje trzeba często aktualizować<br/>
 A: Nie, jak już się pojawia aktualizacja to pewnie ja w kodzie zmieniałem jakieś pierdoły lub podrasowałem troche UI, ale główne działanie aplikacji tj. ściąganie planów zajęć i tygodni niejest zależne od wersji (w sumie raz pobrana aplikacja niebędzie już nigdy potrzebować aktualizacji).
 
-Q: Kiedy aplikacja pojawi się na google playu / app store
+Q: Kiedy aplikacja pojawi się na google playu / app store<br/>
 A: Na google playa postaram się wrzucić do końca tego tygodnia tj. do 12.05.2024, na app store niejestem do końca pewny dużo zależy od tego ile osób będzie chciało z aplikacji korzystać (aby wydać coś na google playa / app stora potrzebna jest wpłata startowa, na google playu niemam z tym problemu bo następny projekt planuje też wydać sobie na androida jednak na app storze ta opłata jest troszkę większa i mniej mi jest na rękę, jednak jak będzie potrzeba to zapłace)
 
-Q: Skąd wiesz który jest teraz tydzień A/B 
+Q: Skąd wiesz który jest teraz tydzień A/B <br/>
 A: Korzystałem z tego dokumentu uczelni: [https://www.ur.edu.pl/files/user_directory/899/organizacja%20roku%20akademickiego/Zarz%C4%85dzenie%20nr%2077_2023%20ws.%20organizacji%20roku%20akademickiego%202023-2024.pdf]
 Jeżeli pojawią się jakieś zmiany można do mnie napisać na teams, chociaż sam staram się w razie czego porawiać tygodnie na bierząco (nietrzeba do tego aktualizować aplikacji oczywiście)
 
-Q: Jak długo aplikacja będzie wspierana (dodawanie/aktualizacja kierunków/grup określanie tygodnia a/b)
+Q: Jak długo aplikacja będzie wspierana (dodawanie/aktualizacja kierunków/grup określanie tygodnia a/b)<br/>
 A: Na ten moment jeżeli ktoś oprócz mnie będzie z niej korzystać to do momentu aż ukończę studia tj: 2027r.
