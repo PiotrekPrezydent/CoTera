@@ -1,7 +1,7 @@
 ﻿using CoTera.Views;
 using Newtonsoft.Json.Linq;
 using Octokit;
-using System.Text;
+using Page = Microsoft.Maui.Controls.Page;
 
 namespace CoTera.Systems
 {
@@ -21,8 +21,6 @@ namespace CoTera.Systems
         internal static string LoadedJsonFile = "";
 
         internal static List<string>? LoadedWeeksTypeA;
-
-        internal static ContentPage CurrentPage;
 
         static void SaveDataToCache()
         {
@@ -115,7 +113,22 @@ namespace CoTera.Systems
 
         internal static async void GetSelectedOptionsContent() => await FetchSelectedOptionsData();
 
-        internal static async void Alert(string title, string message, string cancel) => await CurrentPage!.DisplayAlert(title, message, cancel);
+        internal static async void RefreshData()
+        {
+            await FetchSelectedOptionsData();
+
+            await FetchWeeksTypeA();
+
+            string WeeksDataFile = Path.Combine(FileSystem.CacheDirectory + "/CoTera_WeeksTypeA.txt");
+            string savedData = "";
+            for (int i = 0; i < LoadedWeeksTypeA!.Count; i++)
+                savedData += LoadedWeeksTypeA[i] + "\n";
+
+            File.WriteAllText(WeeksDataFile, savedData);
+
+        }
+
+        internal static async void Alert(string title, string message, string cancel) => await Shell.Current.CurrentPage.DisplayAlert(title, message, cancel);
 
         static async Task FetchAllYears()
         {

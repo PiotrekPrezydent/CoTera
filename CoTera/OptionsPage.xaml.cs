@@ -13,14 +13,14 @@ namespace CoTera
 
             Instance = new OptionsViewModel();
             BindingContext = Instance;
-            DataLoaderSystem.CurrentPage = this;
+            
             DataLoaderSystem.GetAllYears();
         }
 
         async void OnLegalInformationClick(object sender, EventArgs e) =>
             await DisplayAlert(
                 "Informacje Prawne",
-                "Firma PiotrPrezydentApps sp. z o. o. nie ponosi odpowiedzialnoœci za nieprawid³owe dzia³anie aplkikacji\nPoniewa¿ nieistnieje ",
+                "Firma PiotrPrezydentApps sp. z o. o. nie ponosi odpowiedzialnoœci za nieprawid³owe dzia³anie aplikacji, poniewa¿ nieistnieje.",
                 "OK"
             );
 

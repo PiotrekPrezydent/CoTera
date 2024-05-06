@@ -1,5 +1,6 @@
 ﻿namespace CoTera.Views
 {
+    //TD: this class can be deleted
     internal class DayView
     {
         internal DayOfWeek Day;

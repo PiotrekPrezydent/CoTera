@@ -49,9 +49,9 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="0,5">
-                        
+
                         <Frame CornerRadius="45"
-                                BackgroundColor="#6135FF">
+                                BackgroundColor="CornflowerBlue">
                             
                             <Label Text="{Binding .}"
                                    FontSize="24" 

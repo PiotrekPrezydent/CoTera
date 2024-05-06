@@ -12,7 +12,6 @@ namespace CoTera
             InitializeComponent();
             Instance = new MainViewModel();
             BindingContext = Instance;
-            DataLoaderSystem.CurrentPage = this;
             DataLoaderSystem.LoadSavedOrDefaultData();
         }
 
@@ -22,6 +21,6 @@ namespace CoTera
 
         void OnOptionsClicked(object sender, EventArgs e) => NavigationSystem.GoToOptionsAsync();
 
-        void OnRefreshClicked(object sender, EventArgs e) => DataLoaderSystem.GetSelectedOptionsContent();
+        void OnRefreshClicked(object sender, EventArgs e) => DataLoaderSystem.RefreshData();
     }
 }
