@@ -50,13 +50,13 @@
                 <DataTemplate>
                     <Grid Padding="0,5">
 
-                        <Frame CornerRadius="45"
-                                BackgroundColor="CornflowerBlue">
-                            
+                        <Frame
+                               BackgroundColor="#AF006BD1">
+
                             <Label Text="{Binding .}"
+                                   
                                    FontSize="24" 
-                                   TextColor="Black"/>
-                            
+                                   TextColor="Black" />
                         </Frame>
                         
                     </Grid>
