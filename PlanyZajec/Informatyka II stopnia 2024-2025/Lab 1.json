@@ -1,0 +1,128 @@
+{
+    "PON": [
+        { 
+            "nazwa": "Seminarium magisterskie", 
+            "godziny": "11:00 - 13:00",
+            "rodzaj" : "wykład",
+            "sala" : "251 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Procesy stochastyczne", 
+            "godziny": "13:15 - 14:45",
+            "rodzaj" : "wykład",
+            "sala" : "167 B2", 
+            "tydzien" : "B"
+        },
+        { 
+            "nazwa": "Kryptografia praktyczna", 
+            "godziny": "13:15 - 14:45",
+            "rodzaj" : "wykład",
+            "sala" : "167 B2", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Sztuczna inteligencja", 
+            "godziny": "15:00 - 16:30",
+            "rodzaj" : "projekt",
+            "sala" : "227 B1", 
+            "tydzien" : "A"
+        },
+      ],
+
+      "WT": [
+        { 
+            "nazwa": "Sztuczna inteligencja", 
+            "godziny": "08:00 - 08:45",
+            "rodzaj" : "wykład",
+            "sala" : "167 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Języki, automaty, obliczenia", 
+            "godziny": "09:00 - 10:30",
+            "rodzaj" : "wykład",
+            "sala" : "167 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Metody statystyki matematycznej", 
+            "godziny": "10:45 - 12:15",
+            "rodzaj" : "laby",
+            "sala" : "240 B1", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Sztuczna inteligencja", 
+            "godziny": "12:30 - 14:00",
+            "rodzaj" : "laby",
+            "sala" : "227 B1", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Zagadnienia optymalizacyjne", 
+            "godziny": "14:15 - 15:45",
+            "rodzaj" : "laby",
+            "sala" : "207 B4", 
+            "tydzien" : "A+B"
+        },
+      ],
+
+      "SR": [
+        { 
+            "nazwa": "Kryptografia praktyczna", 
+            "godziny": "08:45 - 10:15",
+            "rodzaj" : "laby",
+            "sala" : "208 B4", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Język angielski", 
+            "godziny": "10:30 - 12:00",
+            "rodzaj" : "ćwiczenia",
+            "sala" : "251 B2", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Języki, automaty, obliczenia", 
+            "godziny": "12:15 - 13:45",
+            "rodzaj" : "ćwiczenia",
+            "sala" : "156 B2", 
+            "tydzien" : "A+B"
+        }
+      ],
+
+      "CZW": [
+        { 
+            "nazwa": "Metody statystyki matematycznej", 
+            "godziny": "08:00 - 09:30",
+            "rodzaj" : "wykład",
+            "sala" : "126 B1", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Procesy stochastyczne", 
+            "godziny": "9:45 - 11:15",
+            "rodzaj" : "laby",
+            "sala" : "108 B4", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Zarządzanie zespołem", 
+            "godziny": "11:30 - 13:00",
+            "rodzaj" : "wykład",
+            "sala" : "108 B3", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Zarządzanie zespołem", 
+            "godziny": "13:15 - 14:45",
+            "rodzaj" : "ćwiczenia",
+            "sala" : "108 B3", 
+            "tydzien" : "A"
+        },
+      ],
+      
+      "PT": [
+      ]  
+}
