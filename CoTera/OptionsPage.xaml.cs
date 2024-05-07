@@ -17,8 +17,8 @@ namespace CoTera
             DataLoaderSystem.GetAllYears();
         }
 
-        async void OnLegalInformationClick(object sender, EventArgs e) =>
-            await DisplayAlert(
+        void OnLegalInformationClick(object sender, EventArgs e) =>
+            AppControllerSystem.Alert(
                 "Informacje Prawne",
                 "Firma PiotrPrezydentApps sp. z o. o. nie ponosi odpowiedzialnoœci za nieprawid³owe dzia³anie aplikacji, poniewa¿ nieistnieje.",
                 "OK"
@@ -28,7 +28,7 @@ namespace CoTera
         {
             //td add load data for chosen year and lab
             Instance!.SaveDataToLoader();
-            NavigationSystem.GoBackToMainAsync();
+            AppControllerSystem.GoBackToMainAsync();
         }
 
     }
