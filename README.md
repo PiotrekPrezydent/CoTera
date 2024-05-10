@@ -2,7 +2,10 @@
 ## _Aplikacja do sprawdzania planu zajęć dla studentów uniwersytetu rzeszowskiego_
 
 ### Aplikacja znajduję sie do pobrania za darmo dla:
-Android - Google Play - WORK IN PROGRESS
+Android:
+Aplikacja musi przejść 14 dniowy test na google playu, przez ten czas aplikacja będzię dostępna tylko dla osób które dołączą do grupy na googlu 
+https://groups.google.com/g/coteratesting
+Link do pobrania Aplikacji: WIP (Czekam aż google zakceptuje wersje od 07.05 więc prawdopodbnie niedługo się już pojawi)
 IOS - WORK IN PROGRESS
 
 ### Krótki opis aplikacji
