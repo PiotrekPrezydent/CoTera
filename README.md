@@ -3,9 +3,10 @@
 
 ### Aplikacja znajduję sie do pobrania za darmo dla:
 Android:
-Aplikacja musi przejść 14 dniowy test na google playu, przez ten czas aplikacja będzię dostępna tylko dla osób które dołączą do grupy na googlu 
-https://groups.google.com/g/coteratesting
-Link do pobrania Aplikacji: WIP (Czekam aż google zakceptuje wersje od 07.05 więc prawdopodbnie niedługo się już pojawi)
+Dołączamy na grupe na google: https://groups.google.com/g/coteratesting
+i później można pobrać pod linkiem: https://play.google.com/store/apps/details?id=com.venzu.co_tera
+Jak uda się zaliczyć googlowskie testy aplikacji będzie już poprostu na google playu, ale do tego potrzeba przynajmniej 20 osob aby korzystały z apki przez 14 dni
+
 IOS - WORK IN PROGRESS
 
 ### Krótki opis aplikacji
