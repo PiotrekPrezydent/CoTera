@@ -1,4 +1,4 @@
-{
+no{
     "PON": [
         { 
             "nazwa": "Systemy operacyjne", 
@@ -64,16 +64,9 @@
             "godziny": "14:45 - 16:15",
             "rodzaj" : "ćwiczenia",
             "sala" : "179 B2", 
-            "tydzien" : "A+B"
-        },
-        { 
-            "nazwa": "Algorytmy i struktury danych", 
-            "godziny": "15:00 - 16:30",
-            "rodzaj" : "ćwiczenia",
-            "sala" : "126 B1", 
-            "tydzien" : "A"
+            "tydzien" : "B"
         }
-      ],
+     ],
 
       "SR": [
         { 
