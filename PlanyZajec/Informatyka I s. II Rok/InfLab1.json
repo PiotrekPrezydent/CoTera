@@ -2,44 +2,44 @@
     "PON": [
         { 
             "nazwa": "Grafika i komunikacja człowiek-komputer", 
+            "sala" : "126 A0", 
             "godziny": "8:00 - 9:30",
             "rodzaj" : "wykład",
-            "sala" : "126 A0", 
             "tydzien" : "B"
         },
         { 
             "nazwa": "Język skryptowy", 
+            "sala" : "126 A0", 
             "godziny": "8:00 - 9:30",
             "rodzaj" : "wykład",
-            "sala" : "126 A0", 
             "tydzien" : "A"
         },
         { 
             "nazwa": "Sieci komputerowe", 
+            "sala" : "227 B1", 
             "godziny": "9:45 - 11:15",
             "rodzaj" : "laby",
-            "sala" : "227 B1",
             "tydzien" : "A+B"
         },
         { 
             "nazwa": "Aplikacje internetowe 1", 
+            "sala" : "227 B1", 
             "godziny": "11:30 - 13:00",
             "rodzaj" : "laby",
-            "sala" : "227 B1",
             "tydzien" : "A+B"
         },
         { 
             "nazwa": "Aplikacje internetowe 1", 
+            "sala" : "126 A0", 
             "godziny": "15:00 - 16:30",
             "rodzaj" : "wykład",
-            "sala" : "126 A0", 
             "tydzien" : "B"
         },
         { 
             "nazwa": "Bazy danych", 
+            "sala" : "126 A0", 
             "godziny": "15:00 - 16:30",
             "rodzaj" : "wykład",
-            "sala" : "126 A0", 
             "tydzien" : "A"
         }
       ],
@@ -47,37 +47,37 @@
       "WT": [
         { 
             "nazwa": "Język angielski", 
+            "sala" : "231 B1", 
             "godziny": "8:00 - 9:30",
             "rodzaj" : "ćwiczenia",
-            "sala" : "231 B1", 
             "tydzien" : "A+B"
         },
         { 
             "nazwa": "Wykład monograficzny I", 
+            "sala" : "228 B1", 
             "godziny": "9:45 - 11:15",
             "rodzaj" : "ćwiczenia",
-            "sala" : "228 B1", 
             "tydzien" : "A+B"
         },
         { 
             "nazwa": "Wykład monograficzny I", 
+            "sala" : "243 B1", 
             "godziny": "11:30 - 13:00",
             "rodzaj" : "wykład",
-            "sala" : "243 B1", 
             "tydzien" : "A+B"
         },
         { 
             "nazwa": "Sztuczna inteligencja", 
+            "sala" : "243 B1", 
             "godziny": "13:15 - 14:45",
             "rodzaj" : "ćwiczenia",
-            "sala" : "243 B1",
             "tydzien" : "A+B"
         },
         { 
             "nazwa": "Bazy danych", 
+            "sala" : "227 B1", 
             "godziny": "15:00 - 16:30",
             "rodzaj" : "laby",
-            "sala" : "227 B1", 
             "tydzien" : "A+B"
         }
       ],
@@ -85,30 +85,30 @@
       "SR": [
         { 
             "nazwa": "Metody numeryczne", 
+            "sala" : "227 B1", 
             "godziny": "8:30 - 10:00",
             "rodzaj" : "laby",
-            "sala" : "227 B1", 
             "tydzien" : "A"
         },
         { 
             "nazwa": "Grafika i komunikacja człowiek-komputer", 
+            "sala" : "227 B1", 
             "godziny": "10:15 - 11:45",
             "rodzaj" : "laby",
-            "sala" : "227 B1", 
             "tydzien" : "A"
         },
         { 
             "nazwa": "Język skryptowy", 
+            "sala" : "227 B1", 
             "godziny": "12:00 - 13:30",
             "rodzaj" : "laby",
-            "sala" : "227 B1", 
             "tydzien" : "A"
         },
         { 
             "nazwa": "Sztuczna inteligencja", 
+            "sala" : "167 B2", 
             "godziny": "13:45 - 15:15",
             "rodzaj" : "wykład",
-            "sala" : "167 B2", 
             "tydzien" : "A"
         }
       ],
@@ -116,23 +116,23 @@
       "CZW": [
         { 
             "nazwa": "Architektura systemów komputerowych", 
+            "sala" : "243 B1", 
             "godziny": "12:00 - 13:30",
             "rodzaj" : "wykład",
-            "sala" : "166 B2", 
             "tydzien" : "B"
         },
         { 
             "nazwa": "Sieci komputerowe", 
+            "sala" : "127 A0", 
             "godziny": "12:00 - 13:30",
             "rodzaj" : "wykład",
-            "sala" : "166 B2", 
             "tydzien" : "A"
         },
         { 
             "nazwa": "Architektura systemów komputerowych", 
+            "sala" : "108 B4", 
             "godziny": "13:45 - 15:15",
             "rodzaj" : "laby",
-            "sala" : "108 B4", 
             "tydzien" : "A+B"
         }
       ],
