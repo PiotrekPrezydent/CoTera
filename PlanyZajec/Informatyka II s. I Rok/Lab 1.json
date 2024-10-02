@@ -2,124 +2,103 @@
     "PON": [
         { 
             "nazwa": "Seminarium magisterskie", 
-            "godziny": "11:00 - 13:00",
+            "godziny": "09:30 - 11:00",
             "rodzaj" : "wykład",
-            "sala" : "251 B2", 
+            "sala" : "266 B2", 
             "tydzien" : "A+B"
         },
         { 
-            "nazwa": "Procesy stochastyczne", 
-            "godziny": "13:15 - 14:45",
-            "rodzaj" : "wykład",
-            "sala" : "167 B2", 
-            "tydzien" : "B"
+            "nazwa": "Angielski", 
+            "godziny": "11:15 - 12:45",
+            "rodzaj" : "ćwiczenia",
+            "sala" : "266 B2", 
+            "tydzien" : "A+B"
         },
         { 
-            "nazwa": "Kryptografia praktyczna", 
-            "godziny": "13:15 - 14:45",
+            "nazwa": "Zaawansowane algorytmy i struktury danych", 
+            "godziny": "13:00 - 14:30",
             "rodzaj" : "wykład",
-            "sala" : "167 B2", 
-            "tydzien" : "A"
-        },
-        { 
-            "nazwa": "Sztuczna inteligencja", 
-            "godziny": "15:00 - 16:30",
-            "rodzaj" : "projekt",
-            "sala" : "227 B1", 
-            "tydzien" : "A"
+            "sala" : "126 B1", 
+            "tydzien" : "A+B"
         },
       ],
 
       "WT": [
         { 
-            "nazwa": "Sztuczna inteligencja", 
-            "godziny": "08:00 - 08:45",
+            "nazwa": "Zaawansowane algorytmy i struktury danych", 
+            "godziny": "08:15 - 09:45",
+            "rodzaj" : "laboratorium",
+            "sala" : "308 B4", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Zaawansowane algorytmy i struktury danych", 
+            "godziny": "10:00 - 11:30",
+            "rodzaj" : "laboratorium",
+            "sala" : "308 B4", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Programowanie współbieżne i rozproszone", 
+            "godziny": "12:00 - 13:30",
+            "rodzaj" : "laboratorium",
+            "sala" : "107 B4", 
+            "tydzien" : "A+B"
+        },
+        { 
+            "nazwa": "Medyczne zastosowania uczenia maszynowego", 
+            "godziny": "13:45 - 15:15",
             "rodzaj" : "wykład",
-            "sala" : "167 B2", 
-            "tydzien" : "A+B"
-        },
-        { 
-            "nazwa": "Języki, automaty, obliczenia", 
-            "godziny": "09:00 - 10:30",
-            "rodzaj" : "wykład",
-            "sala" : "167 B2", 
-            "tydzien" : "A+B"
-        },
-        { 
-            "nazwa": "Metody statystyki matematycznej", 
-            "godziny": "10:45 - 12:15",
-            "rodzaj" : "laby",
-            "sala" : "240 B1", 
-            "tydzien" : "A+B"
-        },
-        { 
-            "nazwa": "Sztuczna inteligencja", 
-            "godziny": "12:30 - 14:00",
-            "rodzaj" : "laby",
             "sala" : "227 B1", 
-            "tydzien" : "A+B"
+            "tydzien" : "B"
         },
         { 
-            "nazwa": "Zagadnienia optymalizacyjne", 
-            "godziny": "14:15 - 15:45",
-            "rodzaj" : "laby",
-            "sala" : "207 B4", 
+            "nazwa": "Medyczne zastosowania uczenia maszynowego", 
+            "godziny": "15:30 - 17:00",
+            "rodzaj" : "laboratorium",
+            "sala" : "227 B1", 
             "tydzien" : "A+B"
         },
       ],
 
       "SR": [
         { 
-            "nazwa": "Kryptografia praktyczna", 
-            "godziny": "08:45 - 10:15",
+            "nazwa": "Analiza i przetwarzanie obrazów", 
+            "godziny": "08:00 - 09:30",
             "rodzaj" : "laby",
-            "sala" : "208 B4", 
+            "sala" : "107 B4", 
             "tydzien" : "A+B"
         },
         { 
-            "nazwa": "Język angielski", 
-            "godziny": "10:30 - 12:00",
-            "rodzaj" : "ćwiczenia",
-            "sala" : "251 B2", 
+            "nazwa": "Inteligentne systemy sterowania", 
+            "godziny": "09:45 - 11:15",
+            "rodzaj" : "laby",
+            "sala" : "107 B4", 
             "tydzien" : "A+B"
         },
         { 
-            "nazwa": "Języki, automaty, obliczenia", 
-            "godziny": "12:15 - 13:45",
-            "rodzaj" : "ćwiczenia",
-            "sala" : "156 B2", 
-            "tydzien" : "A+B"
-        }
+            "nazwa": "Inteligentne systemy sterowania", 
+            "godziny": "09:45 - 11:15",
+            "rodzaj" : "wykład",
+            "sala" : "126 B1", 
+            "tydzien" : "A"
+        },
       ],
 
       "CZW": [
         { 
-            "nazwa": "Metody statystyki matematycznej", 
-            "godziny": "08:00 - 09:30",
+            "nazwa": "Analiza i przetwarzanie obrazów", 
+            "godziny": "10:15 - 11:45",
+            "rodzaj" : "wykład",
+            "sala" : "243 B1", 
+            "tydzien" : "A"
+        },
+        { 
+            "nazwa": "Programowanie współbieżne i rozproszone", 
+            "godziny": "15:30 - 17:00",
             "rodzaj" : "wykład",
             "sala" : "126 B1", 
             "tydzien" : "A+B"
-        },
-        { 
-            "nazwa": "Procesy stochastyczne", 
-            "godziny": "9:45 - 11:15",
-            "rodzaj" : "laby",
-            "sala" : "108 B4", 
-            "tydzien" : "A"
-        },
-        { 
-            "nazwa": "Zarządzanie zespołem", 
-            "godziny": "11:30 - 13:00",
-            "rodzaj" : "wykład",
-            "sala" : "108 B3", 
-            "tydzien" : "A"
-        },
-        { 
-            "nazwa": "Zarządzanie zespołem", 
-            "godziny": "13:15 - 14:45",
-            "rodzaj" : "ćwiczenia",
-            "sala" : "108 B3", 
-            "tydzien" : "A"
         },
       ],
       
