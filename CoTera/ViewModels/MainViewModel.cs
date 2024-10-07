@@ -2,6 +2,7 @@
 using CoTera.Views;
 using System.ComponentModel;
 using System.Data;
+using URAPI;
 
 namespace CoTera.ViewModels
 {
@@ -42,7 +43,6 @@ namespace CoTera.ViewModels
         }
         List<string> _currentDayClasses;
 
-
         public event PropertyChangedEventHandler? PropertyChanged;
 
         internal DayView[] LoadedDays = new DayView[7];
@@ -57,6 +57,11 @@ namespace CoTera.ViewModels
                 CurrentDayClasses.Add("UNKNOWN");
             };
             ChosenDate = DateTime.Today;
+        }
+
+        public void Show()
+        {
+
         }
 
         internal void ShowClassesForCurrentDay()

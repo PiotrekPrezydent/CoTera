@@ -1,73 +1,105 @@
 ﻿using CoTera.Systems;
 using Octokit;
 using System.ComponentModel;
+using URAPI;
 
 namespace CoTera.ViewModels
 {
     internal class OptionsViewModel : INotifyPropertyChanged
     {
-        public List<string> LoadedYears
+        public List<Collage> Collages
         {
-            get => _loadedYears;
+            get => _collages;
             set
             {
-                _loadedYears = value;
-                OnPropertyChanged(nameof(LoadedYears));
+                _collages = value;
+                SelectedCollageIndex = 0;
+                OnPropertyChanged(nameof(Collages));
             }
         }
-        List<string> _loadedYears;
+        List<Collage> _collages;
 
-        public int SelectedYearIndex
+        public int SelectedCollageIndex
         {
-            get => _selectedYearIndex;
+            get => _selectedCollageIndex;
             set
             {
-                _selectedYearIndex = value;
-                DataLoaderSystem.GetAllLabsForCurrentYear();
-                OnPropertyChanged(nameof(SelectedYearIndex));
+                _selectedCollageIndex = value;
+                Task.Run(async () =>
+                {
+                    Majors = await Collages[SelectedCollageIndex].GetMajors();
+                }).Wait();
+                OnPropertyChanged(nameof(SelectedCollageIndex));
             }
         }
-        int _selectedYearIndex;
+        int _selectedCollageIndex;
 
-        public List<string> LoadedLabs
+        public List<Major> Majors
         {
-            get => _loadedLabs;
+            get => _majors;
             set
             {
-                _loadedLabs = value;
-                OnPropertyChanged(nameof(LoadedLabs));
+                _majors = value;
+                SelectedMajorIndex = 0;
+                OnPropertyChanged(nameof(Majors));
             }
         }
-        List<string> _loadedLabs;
+        List<Major> _majors;
 
-        public int SelectedLabIndex
+        public int SelectedMajorIndex
         {
-            get => _selectedLabIndex;
+            get => _selectedMajorIndex;
             set
             {
-                _selectedLabIndex = value;
-                OnPropertyChanged(nameof(SelectedLabIndex));
+                _selectedMajorIndex = value;
+                Task.Run(async () =>
+                {
+                    YearsOfStudies = await Majors[SelectedMajorIndex].GetYearOfStudies();
+                }).Wait();
+                OnPropertyChanged(nameof(SelectedMajorIndex));
             }
         }
-        int _selectedLabIndex;
+        int _selectedMajorIndex;
+
+
+        public List<YearOfStudies> YearsOfStudies
+        {
+            get => _yearsOfStudies;
+            set
+            {
+                _yearsOfStudies = value;
+                SelectedYearOfStudiesIndex = 0;
+                OnPropertyChanged(nameof(YearsOfStudies));
+            }
+        }
+        List<YearOfStudies> _yearsOfStudies;
+
+        public int SelectedYearOfStudiesIndex
+        {
+            get => _selectedYearOfStudiesIndex;
+            set
+            {
+                _selectedYearOfStudiesIndex = value;
+                OnPropertyChanged(nameof(SelectedYearOfStudiesIndex));
+            }
+        }
+        int _selectedYearOfStudiesIndex;
+
+
 
         public OptionsViewModel()
         {
-            LoadedYears = new List<string>();
-            LoadedLabs = new List<string>();
 
-            LoadedYears.Add(DataLoaderSystem.SavedSelectedYear!);
-            LoadedLabs.Add(DataLoaderSystem.SavedSelectedLab!);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
         internal void SaveDataToLoader()
         {
-            DataLoaderSystem.SavedSelectedYear = LoadedYears[SelectedYearIndex];
-            DataLoaderSystem.SavedSelectedLab = LoadedLabs[SelectedLabIndex];
+            //DataLoaderSystem.SavedSelectedYear = Collages[SelectedCollageIndex];
+            //DataLoaderSystem.SavedSelectedLab = Majors[SelectedMajorIndex];
 
-            DataLoaderSystem.GetSelectedOptionsContent();
+            //DataLoaderSystem.GetSelectedOptionsContent();
         }
         void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }

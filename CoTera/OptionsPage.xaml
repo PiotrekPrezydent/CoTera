@@ -15,20 +15,30 @@
 
         <Picker Grid.Row="1"
                 Grid.Column="1"
-                Title="Wybierz Rok"
+                Title="Wybierz Kolegium"
                 TitleColor="White"
                 TextColor="White"
-                ItemsSource="{Binding LoadedYears}"
-                SelectedIndex="{Binding SelectedYearIndex}" />
+                ItemsSource="{Binding Collages}"
+                SelectedIndex="{Binding SelectedCollageIndex}" />
 
 
         <Picker Grid.Row="2"
                 Grid.Column="1"
-                Title="Wybierz Lab"
+                Title="Wybierz Kierunek"
                 TitleColor="White"
                 TextColor="White"
-                ItemsSource="{Binding LoadedLabs}"
-                SelectedIndex="{Binding SelectedLabIndex}" />
+                ItemsSource="{Binding Majors}"
+                SelectedIndex="{Binding SelectedMajorIndex}" />
+
+
+        <Picker Grid.Row="3"
+                Grid.Column="1"
+                Title="Wybierz Rok Studiów"
+                TitleColor="White"
+                TextColor="White"
+                ItemsSource="{Binding YearsOfStudies}"
+                SelectedIndex="{Binding SelectedYearOfStudiesIndex}" />
+
 
         <Button Grid.Row="4"
                 Grid.Column="1"

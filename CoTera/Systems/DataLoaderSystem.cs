@@ -120,36 +120,36 @@ namespace CoTera.Systems
                 if (year.Type == ContentType.Dir)
                     loadedData.Add(year.Name);
 
-            OptionsPage.Instance!.LoadedYears = loadedData;
-            OptionsPage.Instance.SelectedYearIndex = loadedData.IndexOf(SavedSelectedYear!) != -1 ? loadedData.IndexOf(SavedSelectedYear!) : 0;
+            //OptionsPage.Instance!.Collages = loadedData;
+            //OptionsPage.Instance.SelectedCollageIndex = loadedData.IndexOf(SavedSelectedYear!) != -1 ? loadedData.IndexOf(SavedSelectedYear!) : 0;
         }
 
         static async Task FetchLabsForCurrentYear()
         {
-            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
-            {
-                AppControllerSystem.Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
-                return;
-            }
+            //if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet && Connectivity.Current.NetworkAccess != NetworkAccess.ConstrainedInternet)
+            //{
+            //    AppControllerSystem.Alert("Brak połączenia z internetem", "Aplikacja niemogła pobrać potrzebnych danych poniważ brakuje połączenia z internetem.\nJeżeli problem niebędzie ustępować proszę skontaktować się z administratorem", "OK");
+            //    return;
+            //}
 
-            if (OptionsPage.Instance!.SelectedYearIndex == -1 || OptionsPage.Instance.LoadedYears[0] == "-")
-                return;
+            //if (OptionsPage.Instance!.SelectedCollageIndex == -1 || OptionsPage.Instance.Collages[0] == "-")
+            //    return;
 
-            string selectedLabPath = "PlanyZajec/" + OptionsPage.Instance.LoadedYears[OptionsPage.Instance.SelectedYearIndex];
+            //string selectedLabPath = "PlanyZajec/" + OptionsPage.Instance.Collages[OptionsPage.Instance.SelectedCollageIndex];
 
-            var loadedData = new List<string>();
+            //var loadedData = new List<string>();
 
-            var contents = await GetDataFromRepoPath(selectedLabPath);
+            //var contents = await GetDataFromRepoPath(selectedLabPath);
 
-            if (contents == null)
-                return;
+            //if (contents == null)
+            //    return;
 
-            foreach (var lab in contents)
-                if (lab.Type == ContentType.File)
-                    loadedData.Add(lab.Name.Substring(0, lab.Name.IndexOf(".json")));
+            //foreach (var lab in contents)
+            //    if (lab.Type == ContentType.File)
+            //        loadedData.Add(lab.Name.Substring(0, lab.Name.IndexOf(".json")));
 
-            OptionsPage.Instance.LoadedLabs = loadedData;
-            OptionsPage.Instance.SelectedLabIndex = loadedData.IndexOf(SavedSelectedLab!) != -1 ? loadedData.IndexOf(SavedSelectedLab!) : 0;
+            //OptionsPage.Instance.Majors = loadedData;
+            //OptionsPage.Instance.SelectedMajorIndex = loadedData.IndexOf(SavedSelectedLab!) != -1 ? loadedData.IndexOf(SavedSelectedLab!) : 0;
         }
 
         static async Task FetchSelectedOptionsData()

@@ -1,5 +1,6 @@
 using CoTera.Systems;
 using CoTera.ViewModels;
+using URAPI;
 
 namespace CoTera
 {
@@ -13,8 +14,11 @@ namespace CoTera
 
             Instance = new OptionsViewModel();
             BindingContext = Instance;
-            
-            DataLoaderSystem.GetAllYears();
+            Task.Run(async () =>
+            {
+                Instance.Collages = await Client.GetCollages();
+            }).Wait();
+            Instance.SelectedCollageIndex = 0;
         }
 
         void OnLegalInformationClick(object sender, EventArgs e) =>
@@ -30,6 +34,8 @@ namespace CoTera
             Instance!.SaveDataToLoader();
             AppControllerSystem.GoBackToMainAsync();
         }
+
+
 
     }
 }

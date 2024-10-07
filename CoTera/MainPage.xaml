@@ -12,6 +12,7 @@
           ColumnSpacing="10"
           BackgroundColor="#512CD4">
 
+
         <Button Grid.Row="0"
                 Grid.Column="0"
                 BackgroundColor="#006BD1"
@@ -82,7 +83,7 @@
                 TextColor="White"
                 Text="⚙"
                 Clicked="OnOptionsClicked"/>
-        
+
     </Grid>
     
 </ContentPage>
