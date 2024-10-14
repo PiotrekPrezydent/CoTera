@@ -1,3 +1,4 @@
+using CommunityToolkit.Maui.Views;
 using CoTera.Systems;
 using CoTera.ViewModels;
 using URAPI;
@@ -14,12 +15,9 @@ namespace CoTera
 
             Instance = new OptionsViewModel();
             BindingContext = Instance;
-            Task.Run(async () =>
-            {
-                Instance.Collages = await Client.GetCollages();
-            }).Wait();
-            Instance.SelectedCollageIndex = 0;
+            InitializeValues();
         }
+
 
         void OnLegalInformationClick(object sender, EventArgs e) =>
             AppControllerSystem.Alert(
@@ -35,7 +33,35 @@ namespace CoTera
             AppControllerSystem.GoBackToMainAsync();
         }
 
+        async void InitializeValues()
+        {
+            AppControllerSystem.LoadingPopup.SetText("£adowanie listy kolegiów...");
+            this.ShowPopup(AppControllerSystem.LoadingPopup);
+            Instance.Collages = await Client.GetCollages();
+            AppControllerSystem.LoadingPopup.Close();
 
+            Instance.SelectedCollageIndex = 0;
+        }
 
+        async void CollageIndexChanged(object sender, EventArgs e)
+        {
+            AppControllerSystem.LoadingPopup.SetText("£adowanie przedmiotów...");
+            this.ShowPopup(AppControllerSystem.LoadingPopup);
+            Instance.Majors = await Instance.Collages[Instance.SelectedCollageIndex].GetMajors();
+            AppControllerSystem.LoadingPopup.Close();
+            if (Instance.SelectedMajorIndex == 0)
+                MajorIndexChanged(sender, e);
+
+            Instance.SelectedMajorIndex = 0;
+        }
+
+        async void MajorIndexChanged(object sender, EventArgs e)
+        {
+            AppControllerSystem.LoadingPopup.SetText("£adowanie planów zajêæ...");
+            this.ShowPopup(AppControllerSystem.LoadingPopup);
+            Instance.YearsOfStudies = await Instance.Majors[Instance.SelectedMajorIndex].GetYearOfStudies();
+            AppControllerSystem.LoadingPopup.Close();
+            Instance.SelectedYearOfStudiesIndex = 0;
+        }
     }
 }

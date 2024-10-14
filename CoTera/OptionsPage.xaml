@@ -19,7 +19,8 @@
                 TitleColor="White"
                 TextColor="White"
                 ItemsSource="{Binding Collages}"
-                SelectedIndex="{Binding SelectedCollageIndex}" />
+                SelectedIndex="{Binding SelectedCollageIndex}"
+                SelectedIndexChanged="CollageIndexChanged"/>
 
 
         <Picker Grid.Row="2"
@@ -28,7 +29,8 @@
                 TitleColor="White"
                 TextColor="White"
                 ItemsSource="{Binding Majors}"
-                SelectedIndex="{Binding SelectedMajorIndex}" />
+                SelectedIndex="{Binding SelectedMajorIndex}"
+                SelectedIndexChanged="MajorIndexChanged"/>
 
 
         <Picker Grid.Row="3"
@@ -37,7 +39,7 @@
                 TitleColor="White"
                 TextColor="White"
                 ItemsSource="{Binding YearsOfStudies}"
-                SelectedIndex="{Binding SelectedYearOfStudiesIndex}" />
+                SelectedIndex="{Binding SelectedYearOfStudiesIndex}"/>
 
 
         <Button Grid.Row="4"

@@ -1,4 +1,5 @@
-﻿using CoTera.Systems;
+﻿using CommunityToolkit.Maui.Views;
+using CoTera.Systems;
 using Octokit;
 using System.ComponentModel;
 using URAPI;
@@ -13,7 +14,6 @@ namespace CoTera.ViewModels
             set
             {
                 _collages = value;
-                SelectedCollageIndex = 0;
                 OnPropertyChanged(nameof(Collages));
             }
         }
@@ -25,10 +25,6 @@ namespace CoTera.ViewModels
             set
             {
                 _selectedCollageIndex = value;
-                Task.Run(async () =>
-                {
-                    Majors = await Collages[SelectedCollageIndex].GetMajors();
-                }).Wait();
                 OnPropertyChanged(nameof(SelectedCollageIndex));
             }
         }
@@ -40,7 +36,6 @@ namespace CoTera.ViewModels
             set
             {
                 _majors = value;
-                SelectedMajorIndex = 0;
                 OnPropertyChanged(nameof(Majors));
             }
         }
@@ -52,10 +47,6 @@ namespace CoTera.ViewModels
             set
             {
                 _selectedMajorIndex = value;
-                Task.Run(async () =>
-                {
-                    YearsOfStudies = await Majors[SelectedMajorIndex].GetYearOfStudies();
-                }).Wait();
                 OnPropertyChanged(nameof(SelectedMajorIndex));
             }
         }
@@ -68,7 +59,6 @@ namespace CoTera.ViewModels
             set
             {
                 _yearsOfStudies = value;
-                SelectedYearOfStudiesIndex = 0;
                 OnPropertyChanged(nameof(YearsOfStudies));
             }
         }
@@ -89,7 +79,9 @@ namespace CoTera.ViewModels
 
         public OptionsViewModel()
         {
-
+            _collages = new();
+            _majors = new();
+            _yearsOfStudies = new();
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
