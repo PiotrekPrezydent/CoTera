@@ -25,9 +25,8 @@ namespace CoTera
             LoadingPopup l = new LoadingPopup("Pobieranie planu zajêæ i zapisywanie...");
             this.ShowPopup(l);
 
-            await DataLoaderSystem.SaveData(Instance.Schedules[Instance.SelectedScheduleIndex]);
+            await DataLoaderSystem.SaveData();
             l.Close();
-
             AppControllerSystem.GoBackToMainAsync();
         }
 

@@ -14,6 +14,10 @@ namespace CoTera
         {
             InitializeComponent();
             BindingContext = Instance;
+            SetPage();
+        }
+        public void SetPage()
+        {
 #if ANDROID
             Microsoft.Maui.Handlers.WebViewHandler.Mapper.AppendToMapping("PdfViewer", (handler, View) =>
             {
@@ -22,15 +26,22 @@ namespace CoTera
                 handler.PlatformView.Settings.AllowUniversalAccessFromFileURLs = true;
             });
 
-            PdfViewer.Source = $"file:///android_asset/pdfjs/web/viewer.html?file=file:///android_asset/{WebUtility.UrlEncode(Path.Combine(FileSystem.CacheDirectory + "/savedpdf.pdf"))}";
+            PdfViewer.Source = $"file:///android_asset/pdfjs/web/viewer.html?file={Path.Combine(FileSystem.CacheDirectory + "/savedpdf.pdf")}";
 #else
             PdfViewer.Source = Path.Combine(FileSystem.CacheDirectory + "/savedpdf.pdf");
 #endif
         }
 
-
         void OnOptionsClicked(object sender, EventArgs e) => AppControllerSystem.GoToOptionsAsync();
 
-        void OnRefreshClicked(object sender, EventArgs e) => DataLoaderSystem.RefreshData();
+        async void OnRefreshClicked(object sender, EventArgs e)
+        {
+            LoadingPopup l = new LoadingPopup("Pobieranie planu zajęć i zapisywanie...");
+            this.ShowPopup(l);
+            await DataLoaderSystem.RefreshData();
+            l.Close();
+            SetPage();
+        }
+
     }
 }

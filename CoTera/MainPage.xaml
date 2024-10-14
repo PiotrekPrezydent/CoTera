@@ -16,7 +16,8 @@
                  VerticalOptions="FillAndExpand" 
                  HorizontalOptions="FillAndExpand"
                  Grid.ColumnSpan="3"
-                 Grid.RowSpan="2"/>
+                 Grid.RowSpan="2"
+                 />
 
 
         <Button Grid.Row="2"

@@ -14,6 +14,7 @@ namespace CoTera.ViewModels
 
         }
 
+
         void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

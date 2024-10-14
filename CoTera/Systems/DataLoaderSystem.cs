@@ -20,10 +20,10 @@ namespace CoTera.Systems
             await LoadData();
         }
 
-        public static async Task SaveData(Schedule schedule)
+        public static async Task SaveData()
         {
             //save pdf
-            byte[] bytes = await schedule.GetPDFBytes();
+            byte[] bytes = await OptionsPage.Instance.Schedules[SelectedScheduleIndex].GetPDFBytes();
             Task pdfSaveTask = File.WriteAllBytesAsync(PdfFilePath, bytes);
             string saveDataText = $"CollageIndex={SelectedCollageIndex}\n" +
                                   $"MajorIndex={SelectedMajorIndex}\n" +
@@ -45,9 +45,17 @@ namespace CoTera.Systems
             SelectedScheduleIndex = int.Parse(lines[2].Split("=")[1]);
         }
 
-        public static void RefreshData()
+        public static async Task RefreshData()
         {
-            AppControllerSystem.Alert("T", $"{File.Exists(PdfFilePath)}  /// {File.Exists(ConfFilePath)}","C");
+            if (!File.Exists(PdfFilePath))
+                return;
+            List<Collage> collages = await Client.GetCollages();
+            List<Major> majors = await collages[SelectedCollageIndex].GetMajors();
+            List<Schedule> schedules = await majors[SelectedMajorIndex].GetSchedules();
+
+            byte[] bytes = await schedules[SelectedScheduleIndex].GetPDFBytes();
+            Task pdfSaveTask = File.WriteAllBytesAsync(PdfFilePath, bytes);
+            await pdfSaveTask;
         }
 
     }
