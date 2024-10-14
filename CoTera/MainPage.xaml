@@ -11,60 +11,13 @@
           RowSpacing="10"
           ColumnSpacing="10"
           BackgroundColor="#512CD4">
+        
+        <WebView x:Name="PdfViewer" 
+                 VerticalOptions="FillAndExpand" 
+                 HorizontalOptions="FillAndExpand"
+                 Grid.ColumnSpan="3"
+                 Grid.RowSpan="2"/>
 
-
-        <Button Grid.Row="0"
-                Grid.Column="0"
-                BackgroundColor="#006BD1"
-                CornerRadius="30"
-                TextColor="White"
-                Text="&lt;&lt;"
-                Clicked="OnPreviousClicked"/>
-
-        <Border Grid.Row="0"
-                Grid.Column="1"
-                BackgroundColor="#006BD1"
-                StrokeThickness="0.2"
-                Stroke="Black"
-                StrokeShape="RoundRectangle 30,30,30,30">
-
-            <Label HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   TextColor="White"
-                   Text="{Binding NameOfDay}"/>
-
-        </Border>
-
-        <Button Grid.Row="0"
-                Grid.Column="2"
-                BackgroundColor="#006BD1"
-                CornerRadius="30"
-                TextColor="White"
-                Text="&gt;&gt;"
-                Clicked="OnNextClicked"/>
-
-        <CollectionView Grid.Row="1" 
-                        Grid.ColumnSpan="3" 
-                        ItemsSource="{Binding CurrentDayClasses}">
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="0,5">
-
-                        <Frame
-                               BackgroundColor="#AF006BD1">
-
-                            <Label Text="{Binding .}"
-                                   
-                                   FontSize="24" 
-                                   TextColor="Black" />
-                        </Frame>
-                        
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-
-        </CollectionView>
 
         <Button Grid.Row="2"
                 Grid.Column="0"

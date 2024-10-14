@@ -7,61 +7,68 @@ namespace CoTera
 {
     public partial class OptionsPage : ContentPage
     {
-        internal static OptionsViewModel? Instance;
+        static internal OptionsViewModel Instance = new OptionsViewModel();
 
         public OptionsPage()
         {
             InitializeComponent();
-
-            Instance = new OptionsViewModel();
             BindingContext = Instance;
             InitializeValues();
         }
 
-
-        void OnLegalInformationClick(object sender, EventArgs e) =>
-            AppControllerSystem.Alert(
-                "Informacje Prawne",
-                "Firma PiotrPrezydentApps sp. z o. o. nie ponosi odpowiedzialnoœci za nieprawid³owe dzia³anie aplikacji, poniewa¿ nieistnieje.",
-                "OK"
-            );
-
-        void OnSaveAndReturn(object sender, EventArgs e)
+        async void OnSaveAndReturn(object sender, EventArgs e)
         {
-            //td add load data for chosen year and lab
-            Instance!.SaveDataToLoader();
+            DataLoaderSystem.SelectedCollageIndex = Instance.SelectedCollageIndex;
+            DataLoaderSystem.SelectedMajorIndex = Instance.SelectedMajorIndex;
+            DataLoaderSystem.SelectedScheduleIndex = Instance.SelectedScheduleIndex;
+
+            LoadingPopup l = new LoadingPopup("Pobieranie planu zajêæ i zapisywanie...");
+            this.ShowPopup(l);
+
+            await DataLoaderSystem.SaveData(Instance.Schedules[Instance.SelectedScheduleIndex]);
+            l.Close();
+
             AppControllerSystem.GoBackToMainAsync();
         }
 
         async void InitializeValues()
         {
-            AppControllerSystem.LoadingPopup.SetText("£adowanie listy kolegiów...");
-            this.ShowPopup(AppControllerSystem.LoadingPopup);
+            LoadingPopup l = new LoadingPopup("£adowanie listy kolegiów...");
+            this.ShowPopup(l);
             Instance.Collages = await Client.GetCollages();
-            AppControllerSystem.LoadingPopup.Close();
+            l.Close();
 
-            Instance.SelectedCollageIndex = 0;
+            Instance.SelectedCollageIndex = DataLoaderSystem.SelectedCollageIndex;
         }
 
         async void CollageIndexChanged(object sender, EventArgs e)
         {
-            AppControllerSystem.LoadingPopup.SetText("£adowanie przedmiotów...");
-            this.ShowPopup(AppControllerSystem.LoadingPopup);
+            LoadingPopup l = new LoadingPopup("£adowanie listy przedmiotów...");
+            this.ShowPopup(l);
             Instance.Majors = await Instance.Collages[Instance.SelectedCollageIndex].GetMajors();
-            AppControllerSystem.LoadingPopup.Close();
+            l.Close();
             if (Instance.SelectedMajorIndex == 0)
                 MajorIndexChanged(sender, e);
 
-            Instance.SelectedMajorIndex = 0;
+            Instance.SelectedMajorIndex = DataLoaderSystem.SelectedMajorIndex;
         }
 
         async void MajorIndexChanged(object sender, EventArgs e)
         {
-            AppControllerSystem.LoadingPopup.SetText("£adowanie planów zajêæ...");
-            this.ShowPopup(AppControllerSystem.LoadingPopup);
-            Instance.YearsOfStudies = await Instance.Majors[Instance.SelectedMajorIndex].GetYearOfStudies();
-            AppControllerSystem.LoadingPopup.Close();
-            Instance.SelectedYearOfStudiesIndex = 0;
+            LoadingPopup l = new LoadingPopup("£adowanie listy planów zajêæ...");
+            this.ShowPopup(l);
+            Instance.Schedules = await Instance.Majors[Instance.SelectedMajorIndex].GetSchedules();
+            l.Close();
+            Instance.SelectedScheduleIndex = DataLoaderSystem.SelectedScheduleIndex;
         }
+
+
+        void OnLegalInformationClick(object sender, EventArgs e) =>
+            AppControllerSystem.Alert
+            (
+                "Informacje Prawne",
+                "Firma PiotrPrezydentApps sp. z o. o. nie ponosi odpowiedzialnoœci za nieprawid³owe dzia³anie aplikacji, poniewa¿ nieistnieje.",
+                "OK"
+            );
     }
 }

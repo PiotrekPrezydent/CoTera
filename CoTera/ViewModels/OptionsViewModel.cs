@@ -53,46 +53,37 @@ namespace CoTera.ViewModels
         int _selectedMajorIndex;
 
 
-        public List<YearOfStudies> YearsOfStudies
+        public List<Schedule> Schedules
         {
-            get => _yearsOfStudies;
+            get => _schedules;
             set
             {
-                _yearsOfStudies = value;
-                OnPropertyChanged(nameof(YearsOfStudies));
+                _schedules = value;
+                OnPropertyChanged(nameof(Schedules));
             }
         }
-        List<YearOfStudies> _yearsOfStudies;
+        List<Schedule> _schedules;
 
-        public int SelectedYearOfStudiesIndex
+        public int SelectedScheduleIndex
         {
-            get => _selectedYearOfStudiesIndex;
+            get => _selectedScheduleIndex;
             set
             {
-                _selectedYearOfStudiesIndex = value;
-                OnPropertyChanged(nameof(SelectedYearOfStudiesIndex));
+                _selectedScheduleIndex = value;
+                OnPropertyChanged(nameof(SelectedScheduleIndex));
             }
         }
-        int _selectedYearOfStudiesIndex;
-
-
+        int _selectedScheduleIndex;
 
         public OptionsViewModel()
         {
             _collages = new();
             _majors = new();
-            _yearsOfStudies = new();
+            _schedules = new();
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        internal void SaveDataToLoader()
-        {
-            //DataLoaderSystem.SavedSelectedYear = Collages[SelectedCollageIndex];
-            //DataLoaderSystem.SavedSelectedLab = Majors[SelectedMajorIndex];
-
-            //DataLoaderSystem.GetSelectedOptionsContent();
-        }
         void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

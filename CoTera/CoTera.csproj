@@ -50,13 +50,13 @@
 
 	<ItemGroup>
 	  <Reference Include="HtmlAgilityPack">
-	    <HintPath>URAPI\HtmlAgilityPack.dll</HintPath>
+	    <HintPath>Resources\Raw\URAPI\HtmlAgilityPack.dll</HintPath>
 	  </Reference>
 	  <Reference Include="HtmlAgilityPack.CssSelectors">
-	    <HintPath>URAPI\HtmlAgilityPack.CssSelectors.dll</HintPath>
+	    <HintPath>Resources\Raw\URAPI\HtmlAgilityPack.CssSelectors.dll</HintPath>
 	  </Reference>
 	  <Reference Include="URAPI">
-	    <HintPath>URAPI\URAPI.dll</HintPath>
+	    <HintPath>Resources\Raw\URAPI\URAPI.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 

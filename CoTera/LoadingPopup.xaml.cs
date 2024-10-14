@@ -10,8 +10,5 @@ public partial class LoadingPopup : Popup
 		LoadingText.Text = text;
 	}
 
-	public void SetText(string text)
-	{
-		LoadingText.Text = text;
-	}
+	public void SetText(string text) => LoadingText.Text = text;
 }

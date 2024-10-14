@@ -28,6 +28,7 @@
                 Title="Wybierz Kierunek"
                 TitleColor="White"
                 TextColor="White"
+                x:Name="Halo"
                 ItemsSource="{Binding Majors}"
                 SelectedIndex="{Binding SelectedMajorIndex}"
                 SelectedIndexChanged="MajorIndexChanged"/>
@@ -38,8 +39,8 @@
                 Title="Wybierz Rok Studiów"
                 TitleColor="White"
                 TextColor="White"
-                ItemsSource="{Binding YearsOfStudies}"
-                SelectedIndex="{Binding SelectedYearOfStudiesIndex}"/>
+                ItemsSource="{Binding Schedules}"
+                SelectedIndex="{Binding SelectedScheduleIndex}"/>
 
 
         <Button Grid.Row="4"

@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using CoTera.Systems;
 using Microsoft.Extensions.Logging;
 
 namespace CoTera
@@ -17,10 +18,7 @@ namespace CoTera
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
-
+            DataLoaderSystem.Initialize();
             return builder.Build();
         }
     }

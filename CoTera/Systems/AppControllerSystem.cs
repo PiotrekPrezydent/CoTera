@@ -2,7 +2,6 @@
 {
     internal static class AppControllerSystem
     {
-        internal static LoadingPopup LoadingPopup = new LoadingPopup("Loading data...");
         internal static async void GoToOptionsAsync() => await Shell.Current.GoToAsync(nameof(OptionsPage));
 
         internal static async void GoBackToMainAsync() => await Shell.Current.GoToAsync("..");
