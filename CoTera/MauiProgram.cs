@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using CoTera.Systems;
-using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace CoTera
 {
@@ -19,6 +19,7 @@ namespace CoTera
                 });
 
             DataLoaderSystem.Initialize();
+            builder.ConfigureSyncfusionCore();
             return builder.Build();
         }
     }

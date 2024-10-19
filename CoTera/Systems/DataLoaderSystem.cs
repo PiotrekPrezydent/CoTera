@@ -1,4 +1,6 @@
 ﻿using URAPI;
+using Microsoft.Maui.Controls;
+using Syncfusion.Maui.PdfToImageConverter;
 
 namespace CoTera.Systems
 {
@@ -8,8 +10,9 @@ namespace CoTera.Systems
         public static int SelectedMajorIndex;
         public static int SelectedScheduleIndex;
 
-        public static readonly string PdfFilePath = Path.Combine(FileSystem.CacheDirectory + "/savedpdf.pdf");
-        public static readonly string ConfFilePath = Path.Combine(FileSystem.CacheDirectory + "/data.conf");
+        public static readonly string PdfPath = Path.Combine(FileSystem.CacheDirectory + "\\saved.png");
+        public static readonly string ConfFilePath = Path.Combine(FileSystem.CacheDirectory + "\\data.conf");
+        public static Stream PDFStream;
 
         public static async void Initialize()
         {
@@ -22,17 +25,21 @@ namespace CoTera.Systems
 
         public static async Task SaveData()
         {
-            //save pdf
-            byte[] bytes = await OptionsPage.Instance.Schedules[SelectedScheduleIndex].GetPDFBytes();
-            Task pdfSaveTask = File.WriteAllBytesAsync(PdfFilePath, bytes);
+            var b = await OptionsPage.Instance.Schedules[SelectedScheduleIndex].GetScheduleMemoryStream();
             string saveDataText = $"CollageIndex={SelectedCollageIndex}\n" +
                                   $"MajorIndex={SelectedMajorIndex}\n" +
                                   $"ScheduleIndex={SelectedScheduleIndex}";
+            FileStream fs = new(PdfPath, FileMode.OpenOrCreate);
             //save
             Task confSaveTask = File.WriteAllTextAsync(ConfFilePath, saveDataText);
-            await pdfSaveTask;
-            await confSaveTask;
 
+            PdfToImageConverter imageConverter = new PdfToImageConverter();
+            imageConverter.Load(b);
+            Stream s = imageConverter.Convert(0);
+            imageConverter.Dispose();
+            s.CopyTo(fs);
+
+            await confSaveTask;
         }
 
         public static async Task LoadData()
@@ -47,15 +54,8 @@ namespace CoTera.Systems
 
         public static async Task RefreshData()
         {
-            if (!File.Exists(PdfFilePath))
-                return;
-            List<Collage> collages = await Client.GetCollages();
-            List<Major> majors = await collages[SelectedCollageIndex].GetMajors();
-            List<Schedule> schedules = await majors[SelectedMajorIndex].GetSchedules();
-
-            byte[] bytes = await schedules[SelectedScheduleIndex].GetPDFBytes();
-            Task pdfSaveTask = File.WriteAllBytesAsync(PdfFilePath, bytes);
-            await pdfSaveTask;
+            string msg = (File.Exists(PdfPath)).ToString() + " /// " + PdfPath;
+            AppControllerSystem.Alert("T", msg, "C");
         }
 
     }

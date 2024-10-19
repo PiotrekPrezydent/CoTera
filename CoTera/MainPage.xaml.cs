@@ -18,21 +18,14 @@ namespace CoTera
         }
         public void SetPage()
         {
-#if ANDROID
-            Microsoft.Maui.Handlers.WebViewHandler.Mapper.AppendToMapping("PdfViewer", (handler, View) =>
-            {
-                handler.PlatformView.Settings.AllowFileAccess = true;
-                handler.PlatformView.Settings.AllowFileAccessFromFileURLs = true;
-                handler.PlatformView.Settings.AllowUniversalAccessFromFileURLs = true;
-            });
-
-            PdfViewer.Source = $"file:///android_asset/pdfjs/web/viewer.html?file={Path.Combine(FileSystem.CacheDirectory + "/savedpdf.pdf")}";
-#else
-            PdfViewer.Source = Path.Combine(FileSystem.CacheDirectory + "/savedpdf.pdf");
-#endif
+            MyImage.Source = DataLoaderSystem.PdfPath;
         }
 
-        void OnOptionsClicked(object sender, EventArgs e) => AppControllerSystem.GoToOptionsAsync();
+        void OnOptionsClicked(object sender, EventArgs e) 
+        {
+            AppControllerSystem.GoToOptionsAsync();
+
+        }
 
         async void OnRefreshClicked(object sender, EventArgs e)
         {

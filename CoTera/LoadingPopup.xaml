@@ -4,7 +4,7 @@
        xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
        x:Class="CoTera.LoadingPopup"
        Color="Transparent"
-        CanBeDismissedByTappingOutsideOfPopup="False">
+       CanBeDismissedByTappingOutsideOfPopup="False">
         
     <Grid RowDefinitions="Auto,*,Auto"
           ColumnDefinitions="Auto,*,Auto">
@@ -29,7 +29,7 @@
                        VerticalOptions="Center" />
 
                 <ActivityIndicator IsRunning="true"
-                                   Color="Black"
+                                   Color="White"
                                    VerticalOptions="Center"
                                    HorizontalOptions="Center"
                                    WidthRequest="40"

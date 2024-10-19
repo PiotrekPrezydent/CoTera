@@ -38,6 +38,8 @@ namespace CoTera
             l.Close();
 
             Instance.SelectedCollageIndex = DataLoaderSystem.SelectedCollageIndex;
+            Instance.SelectedMajorIndex = DataLoaderSystem.SelectedMajorIndex;
+            Instance.SelectedScheduleIndex = DataLoaderSystem.SelectedScheduleIndex;
         }
 
         async void CollageIndexChanged(object sender, EventArgs e)

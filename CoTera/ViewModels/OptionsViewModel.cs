@@ -1,7 +1,4 @@
-﻿using CommunityToolkit.Maui.Views;
-using CoTera.Systems;
-using Octokit;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using URAPI;
 
 namespace CoTera.ViewModels
